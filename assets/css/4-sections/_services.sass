@@ -1,0 +1,133 @@
+$section_height: 770px
+
+.services
+    display: table
+    width: 100%
+
+    .row-tight
+        height: $section_height
+        +iphone
+            height: 580px
+
+        .span2
+            .caption-banner
+                height: 100%
+
+                header,
+                footer
+                    height: 50%
+                    width: 100%
+
+                    .wrap,
+                    .text-wrap
+                        width: 100%
+                        height: 100%
+
+                    +tablet
+                        .color-overlay
+                            padding: 35px 40px 40px 40px
+
+                            p
+                                height: 240px
+                                font-size: 120%
+
+                    +mobile
+                        .triangle-top,
+                        .triangle-bottom
+                            bottom: -11px
+                            left: 0
+                            right: 0
+                            top: auto
+                            height: 0
+                            width: 19px
+                        .triangle-top
+                            +transform(rotate(180deg))
+
+                    +iphone
+                        .color-overlay
+                            padding: 30px
+
+                            p
+                                height: 170px
+                                font-size: 110%
+
+            +mobile
+                .caption-banner
+                    display: table
+
+                    footer
+                        display: table-footer-group
+
+                    header
+                        display: table-header-group
+
+            +iphone
+                .wrap
+                    img
+                        height: 115px
+                        margin-bottom: 30px
+
+                .text-wrap
+                    font-size: 90%
+
+        .span5
+            .caption-banner
+                position: relative
+                height: 100%
+
+                header
+                    position: absolute
+                    display: block
+                    top: 0
+                    left: 0
+                    height: 50%
+                    width: 50%
+                    z-index: 999
+                    +mobile
+                        position: relative
+                        width: 100%
+                        height: 50%
+                        display: table
+
+                    .wrap
+                        width: 100%
+                        height: 100%
+
+                        .inner-wrap
+                            display: table
+                            vertical-align: middle
+                            width: 100%
+                            height: 100%
+
+                footer
+                    width: 100%
+                    height: 100%
+                    +mobile
+                        height: 50%
+
+                    .text-wrap
+                        width: 100%
+                        height: 100%
+
+
+                    .color-overlay
+                        +mobile
+                            padding: 35px 40px 40px
+                        +iphone
+                            padding: 30px
+                            p
+                                height: 170px
+                                font-size: 110%
+
+                        .inner-wrap
+                            display: table
+                            position: absolute
+                            bottom: 0
+                            left: 0
+                            width: 100%
+                            height: 50%
+                            padding: 50px 60px
+                            +mobile
+                                 padding: 0
+                                 position: relative
+                                 height: 100%

@@ -1,0 +1,133 @@
+$section_height: 460px
+
+.title
+
+    .row-tight
+        height: $section_height
+        +mobile
+            height: auto
+
+    .span7,
+    .span3,
+    .img-wrap,
+    .wrap
+        height: 100%
+
+    .span-left
+        .img-wrap
+            position: relative
+            z-index: 9
+
+            &:after
+                content: ''
+                display: block
+                position: absolute
+                width: 100%
+                height: 100%
+                left: 0
+                top: 0
+                background: -webkit-linear-gradient(right,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%)
+                background: -o-linear-gradient(right,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%)
+                background: -moz-linear-gradient(right,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%)
+                background: linear-gradient(right,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%)
+                +large-desktop
+                    background: -webkit-linear-gradient(right,  rgba(255,255,255,0.4) 0%, rgba(255,255,255,1) 50%)
+                    background: -o-linear-gradient(right,  rgba(255,255,255,0.4) 0%, rgba(255,255,255,1) 50%)
+                    background: -moz-linear-gradient(right,  rgba(255,255,255,0.4) 0%, rgba(255,255,255,1) 50%)
+                    background: linear-gradient(right,  rgba(255,255,255,0.4) 0%, rgba(255,255,255,1) 50%)
+                +desktop
+                    background: -webkit-linear-gradient(right,  rgba(255,255,255,0.25) 0%, rgba(255,255,255,1) 70%)
+                    background: -o-linear-gradient(right,  rgba(255,255,255,0.25) 0%, rgba(255,255,255,1) 70%)
+                    background: -moz-linear-gradient(right,  rgba(255,255,255,0.25) 0%, rgba(255,255,255,1) 70%)
+                    background: linear-gradient(right,  rgba(255,255,255,0.25) 0%, rgba(255,255,255,1) 70%)
+                +tablet
+                    background: -webkit-linear-gradient(right,  rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.95) 50%)
+                    background: -o-linear-gradient(right,  rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.95) 50%)
+                    background: -moz-linear-gradient(right,  rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.95) 50%)
+                    background: linear-gradient(right,  rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.95) 50%)
+
+
+            .wrap
+                position: relative
+                width: 80%
+                margin: 0 auto
+                display: table
+                z-index: 99
+                +large-desktop
+                    width: 70%
+                +desktop
+                    width: 72%
+                +tablet
+                    width: 70%
+                +mobile
+                    height: 250px
+                    text-align: center
+
+                h1
+                    display: table-cell
+                    vertical-align: middle
+                    color: $blue
+                    text-transform: uppercase
+                    font-family: $bebas
+                    font-weight: bold
+                    letter-spacing: 0px
+                    font-size: 70px
+
+                    img
+                        max-height: 120px
+                        max-width: 440px
+                        +tablet
+                            max-height: 75px
+                            max-width: 230px
+
+                    span.sr-only
+                        display: inline-block
+                        text-indent: -9999px
+
+    .span-right
+        .wrap
+            background-color: $blue
+            padding: 55px 60px 60px 60px
+            color: #FFF
+            position: relative
+            +desktop
+                padding: 40px
+            +mobile
+                padding: 30px 30px 40px 30px
+
+                .triangle-left
+                    width: 18px
+                    height: 0px
+                    left: 0
+                    right: 0
+                    top: -18px
+                    bottom: auto
+                    +transform(rotate(90deg))
+
+            h3
+                font-family: $bebas
+                font-weight: bold
+                font-size: 30px
+                line-height: 1
+                letter-spacing: 0px
+                margin-bottom: 20px
+
+            p
+                font-size: 1.05em
+                line-height: 1.85
+                color: #FFF
+                margin-bottom: 0
+                height: 300px
+                overflow: hidden
+                font-weight: 600
+                +large-desktop
+                    line-height: 1.65
+                +desktop
+                    font-size: 0.97em
+                    height: 320px
+                +mobile
+                    height: auto
+                    font-size: 0.95em
+                +iphone
+                    font-size: 0.9em
+                    line-height: 1.5

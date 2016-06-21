@@ -1,0 +1,116 @@
+.caption-banner
+    display: block
+    overflow: hidden
+    width: 100%
+    height: 100%
+    +large-desktop
+        font-size: 91%
+    +mobile
+        font-size: 100%
+        display: table
+
+    .text-wrap,
+    .wrap
+        display: table
+        width: 50%
+        float: left
+        height: 100%
+        +mobile
+            width: 100%
+            float: none
+
+
+    //text-wrap styles
+    .text-wrap
+        position: relative
+        +background_img
+
+        .color-overlay
+            padding: 50px 60px 40px 60px
+            background: transparent
+            +transition(all 0.4s ease-in-out)
+            opacity: 0
+            +mobile
+                font-size: 90%
+                padding: 35px 40px 40px
+            +iphone
+                padding: 30px
+
+    &:hover .color-overlay
+        background-color: rgba(0, 0, 0, 0.4)
+        opacity: 1
+
+    h2,
+    h3
+        color: #FFF
+        font-size: 2.4em
+        text-transform: uppercase
+        font-family: $bebas
+        font-weight: bold
+        margin-bottom: 15px
+
+    p
+        color: #FFF
+        font-size: 1.1em
+        line-height: 1.4
+        height: 230px
+        overflow: hidden
+        +iphone
+            height: 170px
+            font-size: 1em
+
+        &:last-child
+            margin-bottom: 0
+
+    //image-wrap styles
+    .wrap
+        background-color: #FFF
+        vertical-align: middle
+        position: relative
+        +mobile
+            height: 375px
+        +iphone
+            height: 280px
+
+        &:after
+            content: ''
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: #FFF
+            opacity: 0
+            +transition(all 0.4s ease-in-out)
+
+
+        .heading
+            display: table-cell
+            vertical-align: middle
+            text-align: center
+
+            img
+                position: relative
+                display: inline-block
+                margin-bottom: 35px
+                height: 120px
+
+            h2
+                line-height: 1
+                font-size: 2em
+                letter-spacing: 0
+
+        .img-wrap
+            width: 100%
+            height: 68px
+            background-size: 225px
+            display: table-cell
+            vertical-align: middle
+            +mobile
+                background-size: 240px
+            +iphone
+                background-size: 220px
+
+    &:hover .wrap:after
+        opacity: 0.08

@@ -1,0 +1,82 @@
+ul.offers-listing
+    display: table
+    width: 100%
+    list-style-type: none
+    margin: 0 0 40px 0
+    padding: 0
+    position: relative
+
+    &:after
+        position: absolute
+        content: ""
+        display: block
+        height: 100%
+        width: 1px
+        background-color: rgba(0, 0, 0, 0.05)
+        left: 50%
+        top: 0
+        +large-desktop
+            display: none
+
+    li
+        display: block
+        margin: 0
+        padding: 0
+        width: 54%
+        float: left
+        +large-desktop
+            width: 100%
+            padding-left: 0
+
+            &:nth-child(-n+4)
+                display: none
+
+        &:nth-child(2n)
+            width: 46%
+            padding-left: 25px
+            +large-desktop
+                padding-left: 0
+                width: 100%
+
+        a
+            display: block
+            width: 80%
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+            padding: 25px 0
+            +large-desktop
+                width: 100%
+            +tablet
+                padding: 25px 0 15px 0
+
+            &:hover
+                h2
+                    color: $blue
+
+                h5
+                    color: lighten(#373737, 5%)
+
+        &:nth-child(2n) a
+            width: 100%
+
+        h2
+            color: #373737
+            font-size: 1.2em
+            font-weight: 600
+            height: 45px
+            overflow: hidden
+            margin: 0
+            margin-bottom: 0.3em
+            +transition(all 0.4s ease-in-out)
+            +large-desktop
+                height: auto
+
+        h5
+            color: #c2c2c2
+            font-size: 0.9em
+            text-transform: uppercase
+            margin: 0
+            padding: 0
+            +transition(all 0.4s ease-in-out)
+
+            i
+                margin-right: 10px

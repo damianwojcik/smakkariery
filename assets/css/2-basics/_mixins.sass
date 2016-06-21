@@ -1,0 +1,112 @@
+//background image center cover no-repeat
+=background_img
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+
+// hover underline
+=hover_underline
+    &:before
+        content: ""
+        position: absolute
+        background: $red
+        left: 10%
+        bottom: 0
+        height: 2px
+        width: 80%
+        visibility: hidden
+        -webkit-transition: all 0.3s ease-in-out
+        -moz-transition: all 0.3s ease-in-out
+        -ms-transition: all 0.3s ease-in-out
+        -o-transition: all 0.3s ease-in-out
+        transition: all 0.3s ease-in-out
+
+        -webkit-transform: translateY(4px)
+        transform: translateY(4px)
+
+    &:hover:before
+        visibility: visible
+        -webkit-transform: translateY(0)
+        transform: translateY(0)
+
+
+//triangle top
+=triangle-top($color)
+
+    &::after
+        content: ''
+        display: block
+        width: 19px
+        height: 0px
+        border-style: solid
+        border-width: 0 9.5px 11px 9.5px
+        border-color: transparent transparent $color transparent
+        position: absolute
+        top: -11px
+        left: 0
+        right: 0
+        margin: auto
+        z-index: 9
+        +transition(all 0.4s ease-in-out)
+
+//triangle bottom
+=triangle-bottom($color)
+
+    &::before
+        content: ''
+        display: block
+        width: 19px
+        height: 0px
+        border-style: solid
+        border-width: 11px 9.5px 0 9.5px
+        border-color: $color transparent transparent transparent
+        position: absolute
+        bottom: -11px
+        left: 0
+        right: 0
+        margin: auto
+        z-index: 9
+        +transition(all 0.4s ease-in-out)
+
+//triangle right
+=triangle-right($color)
+
+    &::after
+        content: ''
+        display: block
+        width: 0px
+        height: 19px
+        border-style: solid
+        border-width: 9.5px 0 9.5px 10px
+        border-color: transparent transparent transparent $color
+        position: absolute
+        right: -9px
+        top: 0
+        bottom: 0
+        margin: auto
+        z-index: 9
+        +transition(all 0.4s ease-in-out)
+
+//triangle left
+=triangle-left($color)
+
+    &::after
+        content: ''
+        display: block
+        width: 0px
+        height: 19px
+        border-style: solid
+        border-width: 9.5px 10px 9.5px 0
+        border-color: transparent $color transparent
+        position: absolute
+        top: 0
+        bottom: 0
+        margin: auto
+        left: -9px
+        z-index: 9
+        +transition(all 0.4s ease-in-out)
+
+=triangle-none
+
+    &::after
+        display: none

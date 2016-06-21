@@ -1,0 +1,104 @@
+$section_height: 835px
+
+.featured
+    height: $section_height
+    +large-desktop
+        height: 770px
+        box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1) inset
+    +tablet
+        font-size: 95%
+
+        .btn-transparent
+            width: 100%
+
+    .img-wrap
+        height: $section_height
+        width: 100%
+        display: table
+        +large-desktop
+            height: 770px
+        +mobile
+            height: 475px
+            font-size: 125%
+        +iphone
+            height: 375px
+            font-size: 80%
+
+        .text-wrap
+            display: table
+            width: 70%
+            padding-top: 105px
+            padding-left: 100px
+            +large-desktop
+                width: 90%
+                padding-top: 55px
+                padding-left: 60px
+            +tablet
+                width: 80%
+                padding-left: 0
+                text-align: center
+                margin: 0 auto
+            +mobile
+                padding-top: 40px
+
+            h3
+                display: block
+                font-family: $bebas
+                font-weight: normal
+                color: #FFF
+                font-size: 4.5em
+                line-height: 1
+                margin-bottom: 30px
+                +tablet
+                    font-size: 4em
+                +mobile
+                    margin-bottom: 45px
+
+                strong
+                    font-family: $bebas
+                    font-weight: bold
+                    font-size: 3em
+                    display: block
+
+    .wrap
+        display: table
+        width: 100%
+        padding: 60px
+        +large-desktop
+            padding: 50px 60px
+        +mobile
+            padding: 30px 40px 45px 40px
+        +iphone
+            font-size: 90%
+
+        header
+            display: table
+            width: 100%
+            margin-bottom: 30px
+            +tablet
+                margin-bottom: 20px
+            +iphone
+                margin-bottom: 0
+
+            h1
+                font-family: $bebas
+                font-weight: bold
+                font-size: 4.2em
+                line-height: 1
+                display: block
+                color: #000
+                margin-bottom: 0
+
+                small
+                    font-family: $bebas
+                    font-weight: normal
+                    display: block
+                    color: #898989
+                    font-size: 0.4em
+                    margin-top: 0.3em
+
+        .btn
+            +tablet
+                width: 100%
+            +iphone
+                font-size: 120%

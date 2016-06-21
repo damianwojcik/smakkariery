@@ -1,0 +1,233 @@
+$section-height: 770px
+
+.testimonials
+    height: $section-height
+
+    .caption-banner
+        height: 770px
+
+        .wrap
+            width: 100%
+            height: 50%
+            padding: 50px
+            background-color: #F8F8F8
+            text-align: center
+            +transition(all 0.4s ease-in-out)
+            +iphone
+                padding: 30px 30px 40px 30px
+                font-size: 90%
+
+            .inner-wrap
+                display: table-cell
+                vertical-align: middle
+                overflow: hidden
+
+        h3
+            color: #000
+            font-family: $bebas
+            font-weight: normal
+            font-size: 2.4em
+            letter-spacing: 0
+
+        p
+            color: #626262
+            font-size: 1.1em
+            line-height: 1.7
+            max-height: 220px
+            height: auto
+            +large-desktop
+                font-size: 1.05em
+
+        .text-wrap
+            width: 100%
+            height: 50%
+            position: relative
+            +iphone
+                font-size: 90%
+
+            .color-overlay
+                opacity: 1
+                padding: 0
+                background-color: rgba(0,0,0,0.2)
+                display: table
+                padding: 30px 30px 50px 30px
+                position: relative
+                height: 100%
+
+            h3,
+            h4
+                color: #FFF
+                z-index: 99
+
+            h3
+                position: absolute
+                bottom: 75px
+                left: 0
+                width: 100%
+                text-align: center
+                font-family: $bebas
+                font-weight: normal
+                font-size: 3.1em
+                display: block
+                letter-spacing: 1px
+                line-height: 1.2
+                +large-desktop
+                    font-size: 2.5em
+                    bottom: 55px
+
+                strong
+                    display: block
+                    font-family: $bebas
+                    font-weight: bold
+                    font-size: 0.55em
+                    letter-spacing: 0px
+
+            h4
+                font-weight: 400
+                font-size: 1.35em
+                text-transform: uppercase
+                display: block
+                text-align: right
+                line-height: 1.15
+                font-family: $bebas
+                font-weight: normal
+
+                strong
+                    font-size: 1.6em
+                    display: block
+                    font-family: $bebas
+                    font-weight: bold
+
+        &:hover
+            .wrap
+                background-color: darken(#F3F3F3, 5%)
+
+            .text-wrap .color-overlay
+                background-color: rgba(0,0,0,0.1)
+
+    .caption-banner.large
+        +mobile
+            height: auto
+
+        .span3
+            width: 33.3333%
+        .span7
+            width: 66.6666%
+
+        +large-desktop
+            .span3
+                width: 50%
+            .span7
+                width: 50%
+        +mobile
+            .span3
+                width: 100%
+            .span7
+                width: 100%
+
+        .text-wrap
+            height: 770px
+            +iphone
+                height: auto
+
+        .color-overlay
+            height: 770px
+            padding: 55px 50px
+            +iphone
+                height: 385px
+                padding: 30px 30px 50px
+
+            h4
+                font-size: 1.8em
+                line-height: 1.1
+                +iphone
+                    font-size: 1.35em
+                    line-height: 1.15
+
+                strong
+                    font-size: 1.8em
+                    +iphone
+                        font-size: 1.6em
+
+            h3
+                font-size: 4em
+                bottom: 40px
+                +large-desktop
+                    font-size: 3.2em
+                    bottom: 50px
+                +iphone
+                    font-size: 2.5em
+
+        .span3
+            height: 770px
+            +mobile
+                height: auto
+
+            .wrap
+                height: 50%
+
+                &:first-child
+                    background: $red
+                    padding: 75px
+                    display: table
+                    +mobile
+                        display: none
+
+                    h3
+                        color: #FFF
+                        display: table-cell
+                        vertical-align: middle
+                        letter-spacing: 0px
+
+                        strong
+                            display: block
+                            font-family: $bebas
+                            font-weight: bold
+                +mobile
+                    .triangle-left
+                        bottom: auto
+                        top: -18px
+                        left: 0
+                        right: 0
+                        width: 18px
+                        height: 0
+                        +transform(rotate(90deg))
+
+    .span2
+        +desktop
+            .caption-banner
+                height: 385px
+                +mobile
+                    height: auto
+                .wrap,
+                .text-wrap
+                    height: 100%
+                    width: 50%
+                    float: left
+                    +mobile
+                        width: 100%
+                        float: none
+                        height: 385px
+
+                .wrap
+                    +desktop
+                        .triangle-bottom
+                            right: -18px
+                            top: 0
+                            bottom: 0
+                            left: auto
+                            width: 0
+                            height: 18px
+                            +transform(rotate(270deg))
+                    +mobile
+                        border-top: 1px solid rgba(0,0,0,0.1)
+                        .triangle-bottom
+                            height: 0
+                            width: 19px
+                            right: 0
+                            left: 0
+                            top: auto
+                            bottom: -11px
+                            +transform(rotate(360deg))
+                    +iphone
+                        height: auto

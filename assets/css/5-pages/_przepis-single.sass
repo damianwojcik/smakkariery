@@ -1,0 +1,104 @@
+.page-template-page-przepis.single
+    aside
+        ul.accordion li:nth-child(1)
+
+            .accordion-heading
+                background-color: $blue-light
+
+            .accordion-wrap:before
+                content: ''
+                display: block
+                width: 0px
+                height: 0px
+                border-style: solid
+                border-width: 11px 9.5px 0 9.5px
+                border-color: $blue-light transparent transparent transparent
+                position: absolute
+                left: calc(50% - 10px)
+                z-index: 9
+                +transition(all 0.4s ease-in-out)
+
+            &:hover
+                .accordion-heading
+                    background-color: lighten($blue-light, 5%)
+
+                .accordion-wrap:before
+                    border-color: lighten($blue-light, 5%) transparent transparent transparent
+
+
+        ul.accordion li:nth-child(2)
+
+            .accordion-heading
+                background-color: $blue
+
+            .accordion-wrap:before
+                content: ''
+                display: block
+                width: 0px
+                height: 0px
+                border-style: solid
+                border-width: 11px 9.5px 0 9.5px
+                border-color: $blue transparent transparent transparent
+                position: absolute
+                left: calc(50% - 10px)
+                z-index: 9
+                +transition(all 0.4s ease-in-out)
+
+            &:hover
+                .accordion-heading
+                    background-color: lighten($blue, 5%)
+
+                .accordion-wrap:before
+                    border-color: lighten($blue, 5%) transparent transparent transparent
+
+
+        ul.accordion li:nth-child(3)
+
+            .accordion-heading
+                background-color: $purple
+
+            .accordion-wrap:before
+                content: ''
+                display: block
+                width: 0px
+                height: 0px
+                border-style: solid
+                border-width: 11px 9.5px 0 9.5px
+                border-color: $purple transparent transparent transparent
+                position: absolute
+                left: calc(50% - 10px)
+                z-index: 9
+                +transition(all 0.4s ease-in-out)
+
+            &:hover
+                .accordion-heading
+                    background-color: lighten($purple, 5%)
+
+                .accordion-wrap:before
+                    border-color: lighten($purple, 5%) transparent transparent transparent
+
+
+        ul.accordion li:nth-child(4)
+
+            .accordion-heading
+                background-color: $orange
+
+            .accordion-wrap:before
+                content: ''
+                display: block
+                width: 0px
+                height: 0px
+                border-style: solid
+                border-width: 11px 9.5px 0 9.5px
+                border-color: $orange transparent transparent transparent
+                position: absolute
+                left: calc(50% - 10px)
+                z-index: 9
+                +transition(all 0.4s ease-in-out)
+
+            &:hover
+                .accordion-heading
+                    background-color: lighten($orange, 5%)
+
+                .accordion-wrap:before
+                    border-color: lighten($orange, 5%) transparent transparent transparent

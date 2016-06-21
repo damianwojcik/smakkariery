@@ -1,0 +1,207 @@
+$section_height: 770px
+
+.news
+    .row-tight
+    height: $section_height
+    display: table
+    width: 100%
+
+    +large-desktop
+        font-size: 95%
+        height: auto
+    +iphone
+        font-size: 90%
+
+    ul
+        display: table
+        width: 100%
+        margin: 0
+        padding: 0
+        list-style-type: none
+
+        li
+            width: 33.333%
+            height: 50%
+            float: left
+            margin: 0
+            padding: 0
+            +desktop
+                width: 50%
+            +mobile
+                width: 100%
+
+            a
+                display: table
+                width: 100%
+                padding: 60px
+                background-color: #F3F3F3
+                +tablet
+                    padding: 40px
+                +iphone
+                    padding: 30px
+
+                &:hover
+                    background-color: darken(#F3F3F3, 5%)
+
+                h2
+                    color: #000
+                    font-size: 2em
+                    font-family: $bebas
+                    font-weight: bold
+                    text-transform: uppercase
+                    line-height: 1
+                    height: 1em
+                    overflow: hidden
+                    margin-bottom: 0.51em
+
+                time
+                    display: block
+                    font-size: 1em
+                    line-height: 1
+                    font-family: 'Open Sans', sans-serif
+                    font-style: italic
+                    color: #898989
+                    margin-bottom: 2.6em
+
+                p
+                    color: #626262
+                    font-size: 1.1em
+                    line-height: 1.5
+                    height: 4.47em
+                    overflow: hidden
+                    margin-bottom: 40px
+                    +tablet
+                        height: 6em
+                        line-height: 1.4
+                        margin-bottom: 55px
+                    +mobile
+                        height: auto
+                        margin-bottom: 35px
+
+                .btn
+                    +tablet
+                        width: 100%
+
+                &:hover .btn
+                    background-color: lighten($blue, 10%)
+                    color: #FFF
+
+            //even element
+            &:nth-child(2n)
+
+                a
+                    background-color: $blue
+
+                    &:hover
+                        background-color: lighten($blue, 10%)
+
+                    h2,
+                    time,
+                    p
+                        color: #FFF
+
+                    .btn
+                        background-color: #FFF
+                        color: $blue
+
+                    &:hover .btn
+                        background-color: darken(#F3F3F3, 5%)
+                        color: $blue
+
+        +desktop
+            li:nth-child(1) a,
+            li:nth-child(4) a,
+            li:nth-child(5) a,
+            li:nth-child(8) a
+                background-color: #F3F3F3
+
+                h2
+                    color: #000
+
+                time
+                    color: #898989
+
+                p
+                    color: #626262
+
+                .btn
+                    background-color: $blue
+                    color: #FFF
+
+                &:hover
+                    background-color: darken(#F3F3F3, 5%)
+
+                    .btn
+                        background-color: lighten($blue, 10%)
+                        color: #FFF
+
+            li:nth-child(2) a,
+            li:nth-child(3) a,
+            li:nth-child(6) a,
+            li:nth-child(7) a
+                background-color: $blue
+
+                h2,
+                time,
+                p
+                    color: #FFF
+
+                .btn
+                    background-color: #FFF
+                    color: $blue
+
+                &:hover
+                    background-color: lighten($blue, 10%)
+
+                    .btn
+                        background-color: darken(#F3F3F3, 5%)
+                        color: $blue
+
+        +mobile
+            li:nth-child(1) a,
+            li:nth-child(3) a,
+            li:nth-child(5) a,
+            li:nth-child(7) a
+                background-color: #F3F3F3
+
+                h2
+                    color: #000
+
+                time
+                    color: #898989
+
+                p
+                    color: #626262
+
+                .btn
+                    background-color: $blue
+                    color: #FFF
+
+                &:hover
+                    background-color: darken(#F3F3F3, 5%)
+
+                    .btn
+                        background-color: lighten($blue, 10%)
+                        color: #FFF
+
+            li:nth-child(2) a,
+            li:nth-child(4) a,
+            li:nth-child(6) a,
+            li:nth-child(8) a
+                background-color: $blue
+
+                h2,
+                time,
+                p
+                    color: #FFF
+
+                .btn
+                    background-color: #FFF
+                    color: $blue
+
+                &:hover
+                    background-color: lighten($blue, 10%)
+
+                    .btn
+                        background-color: darken(#F3F3F3, 5%)
+                        color: $blue

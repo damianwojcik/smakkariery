@@ -1,0 +1,49 @@
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.btn
+    display: inline-block
+    padding: 18px 20px
+    color: white
+    text-align: center
+    font-size: 1em
+    font-weight: 700
+    line-height: 1
+    white-space: nowrap
+    background-color: $blue
+    border: 0
+    cursor: pointer
+    box-sizing: border-box
+    +transition(all 0.4s ease-in-out)
+
+    i
+        padding-left: 15px
+
+    &:hover,
+    &:active,
+    &:focus
+        color: $blue
+        background-color: #F3F3F3
+        outline: 0
+        text-decoration: none
+
+.btn.btn-transparent,
+.btn.btn-transparent:hover
+    padding: 15px 18px
+    color: #FFF
+    background-color: transparent
+    border: 2px solid #FFF
+
+    &:hover
+        background-color: #FFF
+        color: $red
+
+.btn.btn-red,
+    background-color: $red
+    color: #FFF
+
+    &:hover
+        background-color: darken($red, 5%)
+        color: #FFF

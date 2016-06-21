@@ -1,0 +1,49 @@
+.search-panel
+    background: $red
+    display: none
+    width: 100%
+
+    .wrap
+        width: 400px
+        margin: 0 auto
+        padding: 10px 0
+        display: table
+        +iphone
+            width: 80%
+            text-align: center
+
+        form
+            padding: 0
+            margin: 0
+
+            input
+                display: inline-block
+                margin-bottom: 0
+                height: 45px
+                line-height: 1
+                outline: none
+                border: none
+                border-radius: 0
+                float: left
+                +iphone
+                    float: none
+
+            input[type="submit"]
+                padding: 0 30px
+                background: transparent
+                margin-left: 15px
+                &:hover
+                    background: rgba(0,0,0,0.1)
+                    color: #FFF
+                +iphone
+                    padding: 0 15px
+
+            input[type="text"]
+                padding: 0
+                background-color: transparent
+                color: #FFF
+                opacity: 1
+                +placeholder
+                    color: #FFF
+                +iphone
+                    width: 140px
