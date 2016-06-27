@@ -42,7 +42,7 @@
 					<!-- =================================================
 						aside testimonials
 					================================================== -->
-					<?php get_template_part("partials/aside", "testimonials"); ?>
+					<?php //get_template_part("partials/aside", "testimonials"); ?>
 
 				</div>
 				<!-- END row -->

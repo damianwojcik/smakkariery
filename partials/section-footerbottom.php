@@ -11,7 +11,7 @@
     </a>
 
     <p class="copy">
-        <a href="http://time4.pl/">Time4.pl</a> &copy; 2016
+        <a href="http://time4.pl/" target="_blank" title="Time4 Custom Publishing">Time4.pl</a> &copy; <?= current_time('Y'); ?>
     </p>
 
 </section>

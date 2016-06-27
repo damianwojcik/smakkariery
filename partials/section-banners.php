@@ -2,19 +2,52 @@
 
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><span>Patroni</span></div>
-            <div class="swiper-slide"><a href="#"><img src="<?= THEME_URL; ?>/assets/img/banners/banner-1.jpg" alt="Banner"></a></div>
-            <div class="swiper-slide"><a href="#"><img src="<?= THEME_URL; ?>/assets/img/banners/banner-2.jpg" alt="Banner"></a></div>
-            <div class="swiper-slide"><a href="#"><img src="<?= THEME_URL; ?>/assets/img/banners/banner-3.jpg" alt="Banner"></a></div>
-            <div class="swiper-slide"><a href="#"><img src="<?= THEME_URL; ?>/assets/img/banners/banner-4.jpg" alt="Banner"></a></div>
-            <div class="swiper-slide"><a href="#"><img src="<?= THEME_URL; ?>/assets/img/banners/banner-5.jpg" alt="Banner"></a></div>
-            <div class="swiper-slide"><span>Patroni medialni</span></div>
-            <div class="swiper-slide"><a href="#"><img src="<?= THEME_URL; ?>/assets/img/banners/banner-6.jpg" alt="Banner"></a></div>
-            <div class="swiper-slide"><a href="#"><img src="<?= THEME_URL; ?>/assets/img/banners/banner-7.jpg" alt="Banner"></a></div>
-            <div class="swiper-slide"><a href="#"><img src="<?= THEME_URL; ?>/assets/img/banners/banner-8.jpg" alt="Banner"></a></div>
-            <div class="swiper-slide"><a href="#"><img src="<?= THEME_URL; ?>/assets/img/banners/banner-9.jpg" alt="Banner"></a></div>
-            <div class="swiper-slide"><a href="#"><img src="<?= THEME_URL; ?>/assets/img/banners/banner-10.jpg" alt="Banner"></a></div>
-            <div class="swiper-slide"><a href="#"><img src="<?= THEME_URL; ?>/assets/img/banners/banner-11.jpg" alt="Banner"></a></div>
+
+            <?php
+
+            $field_key_sponsors = "field_5770f8ab53756";
+            $field_key_media_sponsors = "field_5770f92653758";
+            $field_sponsors = get_field_object($field_key_sponsors);
+            $field_media_sponsors = get_field_object($field_key_media_sponsors);
+
+            $gallery_partners = get_field('banners_partners', 'option');
+            $gallery_media_partners = get_field('banners_media_partners', 'option');
+
+            ?>
+
+            <div class="swiper-slide"><span><?php echo $field_sponsors['label']; ?></span></div>
+
+             <?php foreach( $gallery_partners as $image ): ?>
+
+                <div class="swiper-slide">
+
+                    <a href="<?php echo $banner_url; ?>" target="_blank">
+
+                        <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+                    </a>
+
+                </div>
+
+            <?php endforeach; ?>
+
+
+            <div class="swiper-slide"><span><?php echo $field_media_sponsors['label']; ?></span></div>
+
+            <?php foreach( $gallery_media_partners as $image ): ?>
+
+                <div class="swiper-slide">
+
+                    <a href="<?php echo $banner_url; ?>" target="_blank">
+
+                        <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+                    </a>
+
+                </div>
+
+            <?php endforeach; ?>
+
         </div>
     </div>
 

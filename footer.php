@@ -14,7 +14,7 @@
 	<!-- =================================================
 		section footer-gallery
 	================================================== -->
-    <?php get_template_part("partials/section", "footergallery"); ?>
+    <?php //get_template_part("partials/section", "footergallery"); ?>
 
 
 	<!-- =================================================

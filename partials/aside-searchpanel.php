@@ -2,7 +2,7 @@
 
 	<div class="wrap">
 
-		<form id="searchform" class="searchform" action="#" method="get" role="search">
+		<!-- <form id="searchform" class="searchform" action="#" method="get" role="search">
 
 			<div>
 
@@ -12,7 +12,9 @@
 
 			</div>
 
-		</form>
+		</form> -->
+
+		<?php get_search_form(); ?>
 
 	</div>
 

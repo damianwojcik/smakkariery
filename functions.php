@@ -11,6 +11,6 @@
 
 	//include("incl/cpt.php");
 
-	//include("incl/acf.php");
+	include("incl/acf.php");
 
 	include("incl/widgets.php");

@@ -1,6 +1,13 @@
+<?php
+
+	$logo = get_field('logo', 'option');
+	$logo_brand = get_field('logo_brand', 'option');
+
+?>
+
 <header class="site-header">
 
-	<a href="<?= SITE_URL; ?>" class="logo"  style="background-image: url('<?= THEME_URL; ?>/assets/img/smakkariery.png')"></a>
+	<a href="<?= SITE_URL; ?>" class="logo" style="background-image: url('<?php echo $logo['url']?>')"></a>
 
 	<nav>
 
@@ -20,7 +27,7 @@
 		<i class="fa fa-search" aria-hidden="true"></i>
 	</a>
 
-    <a href="http://www.carrefour.pl/" class="logo-brand"></a>
+    <a href="http://www.carrefour.pl/" class="logo-brand" style="background-image: url('<?php echo $logo_brand['url']?>')"></a>
 
 </header>
 <!-- END header -->
