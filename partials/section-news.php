@@ -1,3 +1,11 @@
+<?php
+
+$args = array( 'numberposts' => '6', 'category' => '4' );
+$recent_posts = wp_get_recent_posts( $args );
+
+?>
+
+
 <section class="news">
 
 	<div class="row-tight">
@@ -5,72 +13,33 @@
 		<div class="span7">
 
 			<ul>
-				<li><a href="#" class="article">
 
-					<h2>Dzień przedsiębiorczości</h2>
+				<?php
 
-					<time>28 Maja, 09.00</time>
+				foreach( $recent_posts as $recent ){
 
-					<p>Co roku centrala naszej firmy oraz niektóre sklepy biorą udział w Dniu Przedsiębiorczości, czyli jednodniowych praktykach zawodowych.</p>
+					$content = $recent['post_content'];
+			        $trimmed_content = wp_trim_words( $content, 25 );
+			        $date = date('n M, Y', strtotime($recent['post_date']));
 
-					<div class="btn">Więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+				?>
 
-				</a></li>
-				<li><a href="#" class="article">
+				<li>
+					<a class="article" href="<?php echo get_permalink($recent["ID"]); ?>">
 
-					<h2>Dzień przedsiębiorczości</h2>
+						<h2><?php echo $recent["post_title"]; ?></h2>
 
-					<time>28 Maja, 09.00</time>
+						<time><?php echo $date; ?></time>
 
-					<p>Co roku centrala naszej firmy oraz niektóre sklepy biorą udział w Dniu Przedsiębiorczości, czyli jednodniowych praktykach zawodowych.</p>
+						<p><?php echo $trimmed_content; ?></p>
 
-					<div class="btn">Więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+						<div class="btn">Więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
 
-				</a></li>
-				<li><a href="#" class="article">
+					</a>
+				</li>
 
-					<h2>Dzień przedsiębiorczości</h2>
-
-					<time>28 Maja, 09.00</time>
-
-					<p>Co roku centrala naszej firmy oraz niektóre sklepy biorą udział w Dniu Przedsiębiorczości, czyli jednodniowych praktykach zawodowych.</p>
-
-					<div class="btn">Więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-
-				</a></li>
-				<li><a href="#" class="article">
-
-					<h2>Dzień przedsiębiorczości</h2>
-
-					<time>28 Maja, 09.00</time>
-
-					<p>Co roku centrala naszej firmy oraz niektóre sklepy biorą udział w Dniu Przedsiębiorczości, czyli jednodniowych praktykach zawodowych.</p>
-
-					<div class="btn">Więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-
-				</a></li>
-				<li><a href="#" class="article">
-
-					<h2>Dzień przedsiębiorczości</h2>
-
-					<time>28 Maja, 09.00</time>
-
-					<p>Co roku centrala naszej firmy oraz niektóre sklepy biorą udział w Dniu Przedsiębiorczości, czyli jednodniowych praktykach zawodowych.</p>
-
-					<div class="btn">Więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-
-				</a></li>
-				<li><a href="#" class="article">
-
-					<h2>Dzień przedsiębiorczości</h2>
-
-					<time>28 Maja, 09.00</time>
-
-					<p>Co roku centrala naszej firmy oraz niektóre sklepy biorą udział w Dniu Przedsiębiorczości, czyli jednodniowych praktykach zawodowych.</p>
-
-					<div class="btn">Więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-
-				</a></li>
+				<?php } ?>
+				
 			</ul>
 		</div>
 		<!-- END span7 -->

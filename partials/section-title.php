@@ -1,8 +1,10 @@
 <?php
 
-$title = get_field('title');
-$description = get_field('description');
-$title_bgcolor = get_field('title_bgcolor');
+$logo = get_field('logo', $post->post_parent);
+$title_bg = get_field('title_bg', $post->post_parent);
+$title = get_field('title', $post->post_parent);
+$description = get_field('description', $post->post_parent);
+$title_bgcolor = get_field('title_bgcolor', $post->post_parent);
 
 ?>
 
@@ -12,14 +14,14 @@ $title_bgcolor = get_field('title_bgcolor');
 
         <div class="span7 span-left">
 
-            <div class="img-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/przepisnamistrza/header-bg.jpg')">
+            <div class="img-wrap" style="background-image: url('<?php echo $title_bg['url']; ?>')">
 
                 <div class="wrap">
 
                 <?php if ( ! is_page_template( 'templates/page-contact.php' ) ) { ?>
 					<h1>
-						<img src="<?= THEME_URL; ?>/assets/img/przepisnamistrza/logo.png" alt="Title img">
-						<span class="sr-only">Przepis na mistrza</span>
+						<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+						<span class="sr-only"><?php the_title(); ?></span>
 					</h1>
                 <?php } ?>
 
@@ -33,9 +35,9 @@ $title_bgcolor = get_field('title_bgcolor');
 
         <div class="span3 span-right">
 
-            <div class="wrap" style="background-color: <?php echo $title_bgcolor?>">
+            <div class="wrap" style="background-color: <?php echo $title_bgcolor; ?>">
 
-				<div class="triangle-left" style="border-right-color: <?php echo $title_bgcolor?>"></div>
+				<div class="triangle-left" style="border-right-color: <?php echo $title_bgcolor; ?>"></div>
 
                 <h3><?php echo $title; ?></h3>
 

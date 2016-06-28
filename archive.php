@@ -1,6 +1,6 @@
 <?php
 
-$args = array( 'numberposts' => '7', 'category' => '4' );
+$args = array( 'numberposts' => '6', 'category' => '4' );
 $recent_posts = wp_get_recent_posts( $args );
 
 ?>
@@ -15,7 +15,7 @@ $recent_posts = wp_get_recent_posts( $args );
 
 			<ul>
 
-			<?php
+				<?php
 
 				foreach( $recent_posts as $recent ){
 
@@ -23,7 +23,7 @@ $recent_posts = wp_get_recent_posts( $args );
 			        $trimmed_content = wp_trim_words( $content, 25 );
 			        $date = date('n M, Y', strtotime($recent['post_date']));
 
-			?>
+				?>
 
 				<li>
 					<a class="article" href="<?php echo get_permalink($recent["ID"]); ?>">
@@ -40,7 +40,6 @@ $recent_posts = wp_get_recent_posts( $args );
 				</li>
 
 				<?php } ?>
-
 
 			</ul>
 

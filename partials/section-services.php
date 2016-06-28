@@ -2,193 +2,69 @@
 
 	<div class="row-tight">
 
-		<div class="span2">
+    <?php $child_pages = $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_parent = ".$post->ID."
+    AND post_type = 'page' ORDER BY menu_order", 'OBJECT'); ?>
 
-			<a href="#" class="caption-banner">
+	<?php if ( $child_pages ) { ?>
 
-				<header>
+    	<?php foreach ( $child_pages as $pageChild ) : setup_postdata( $pageChild ); ?>
 
-					<div class="wrap" style="background-color: #2e80c6">
+    		<?php
+    			$icon = get_field('icon', $pageChild);
+    			$color = get_field('color', $pageChild);
+    			$content = $pageChild->post_content;
+		        $trimmed_content = wp_trim_words( $content, 50 );
+    		?>
 
-						<div class="triangle-bottom" style="border-top-color: #2e80c6"></div>
+			<div class="span2">
 
-						<div class="heading">
+				<a class="caption-banner" href="<?php echo get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>" >
 
-							<img src="<?= THEME_URL; ?>/assets/img/przepisnamistrza/home.png" alt="Service Icon">
+					<header>
 
-							<h2>Spotkania w szkołach</h2>
+						<div class="wrap" style="background-color: <?php echo $color; ?>">
 
-						</div>
+							<div class="triangle-bottom" style="border-top-color: <?php echo $color; ?>"></div>
 
-					</div>
-					<!-- ENR wrap -->
+							<div class="heading">
 
-				</header>
+								<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
 
-				<footer>
+								<h2><?php echo $pageChild->post_title; ?></h2>
 
-					<div class="text-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/przepisnamistrza/service-1.jpg')">
-
-						<div class="color-overlay">
-
-							<h2>Strefa ucznia</h2>
-
-							<p>Chcesz zdobyć cenne umiejętności i&nbsp;praktycznie nauczyć się zawodu, weź udział w naszym programie Przepis na mistrza.
-							<br><br>Kierujemy go do uczniów techników oraz zasadniczych szkół zawodowych, którzy chcą rozwijać się w branży handlowej w zawodzie piekarza, cukiernika, wędliniarza lub sprzedawcy.</p>
+							</div>
 
 						</div>
+						<!-- ENR wrap -->
 
-					</div>
-					<!-- END text-wrap -->
+					</header>
 
-				</footer>
+					<footer>
 
-			</a>
-			<!-- END caption-banner -->
+						<div class="text-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/przepisnamistrza/service-1.jpg')">
 
-		</div>
-		<!-- END span2 -->
+							<div class="color-overlay">
 
-		<div class="span2">
+								<h2><?php echo $pageChild->post_title; ?></h2>
 
-			<a href="#" class="caption-banner">
+								<p><?php echo $trimmed_content; ?></p>
 
-				<footer>
-
-					<div class="text-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/przepisnamistrza/service-2.jpg')">
-
-						<div class="color-overlay">
-
-							<h2>Strefa ucznia</h2>
-
-							<p>Chcesz zdobyć cenne umiejętności i&nbsp;praktycznie nauczyć się zawodu, weź udział w naszym programie Przepis na mistrza.
-							<br><br>Kierujemy go do uczniów techników oraz zasadniczych szkół zawodowych, którzy chcą rozwijać się w branży handlowej w zawodzie piekarza, cukiernika, wędliniarza lub sprzedawcy.</p>
+							</div>
 
 						</div>
+						<!-- END text-wrap -->
 
-					</div>
-					<!-- END text-wrap -->
+					</footer>
 
-				</footer>
+				</a>
+				<!-- END caption-banner -->
 
-				<header>
+			</div>
+			<!-- END span2 -->
 
-					<div class="wrap" style="background-color: #2647a1">
+		<?php endforeach; ?>
 
-						<div class="triangle-top" style="border-bottom-color: #2647a1"></div>
-
-						<div class="heading">
-
-							<img src="<?= THEME_URL; ?>/assets/img/przepisnamistrza/hat.png" alt="Service Icon">
-
-							<h2>Klasy patronackie</h2>
-
-						</div>
-
-					</div>
-					<!-- ENR wrap -->
-
-				</header>
-
-			</a>
-			<!-- END caption-banner -->
-
-		</div>
-		<!-- END span2 -->
-
-		<div class="span2">
-
-			<a href="#" class="caption-banner">
-
-				<header>
-
-					<div class="wrap" style="background-color: #96005d">
-
-						<div class="triangle-bottom" style="border-top-color: #96005d"></div>
-
-						<div class="heading">
-
-							<img src="<?= THEME_URL; ?>/assets/img/przepisnamistrza/tools.png" alt="Service Icon">
-
-							<h2>Praktyki zawodowe</h2>
-
-						</div>
-
-					</div>
-					<!-- ENR wrap -->
-
-				</header>
-
-				<footer>
-
-					<div class="text-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/przepisnamistrza/service-3.jpg')">
-
-						<div class="color-overlay">
-
-							<h2>Strefa ucznia</h2>
-
-							<p>Chcesz zdobyć cenne umiejętności i&nbsp;praktycznie nauczyć się zawodu, weź udział w naszym programie Przepis na mistrza.
-							<br><br>Kierujemy go do uczniów techników oraz zasadniczych szkół zawodowych, którzy chcą rozwijać się w branży handlowej w zawodzie piekarza, cukiernika, wędliniarza lub sprzedawcy.</p>
-
-						</div>
-
-					</div>
-					<!-- END text-wrap -->
-
-				</footer>
-
-			</a>
-			<!-- END caption-banner -->
-
-		</div>
-		<!-- END span2 -->
-
-		<div class="span2">
-
-			<a href="#" class="caption-banner">
-
-				<footer>
-
-					<div class="text-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/przepisnamistrza/service-4.jpg')">
-
-						<div class="color-overlay">
-
-							<h2>Strefa ucznia</h2>
-
-							<p>Chcesz zdobyć cenne umiejętności i&nbsp;praktycznie nauczyć się zawodu, weź udział w naszym programie Przepis na mistrza.
-							<br><br>Kierujemy go do uczniów techników oraz zasadniczych szkół zawodowych, którzy chcą rozwijać się w branży handlowej w zawodzie piekarza, cukiernika, wędliniarza lub sprzedawcy.</p>
-
-						</div>
-
-					</div>
-					<!-- END text-wrap -->
-
-				</footer>
-
-				<header>
-
-					<div class="wrap" style="background-color: #f28f2f">
-
-						<div class="triangle-top" style="border-bottom-color: #f28f2f"></div>
-
-						<div class="heading">
-
-							<img src="<?= THEME_URL; ?>/assets/img/przepisnamistrza/graph.png" alt="Service Icon">
-
-							<h2>Dzień przedsiębiorczości</h2>
-
-						</div>
-
-					</div>
-					<!-- ENR wrap -->
-
-				</header>
-
-			</a>
-			<!-- END caption-banner -->
-
-		</div>
-		<!-- END span2 -->
+	<?php }//end if ?>
 
 	</div>
 
