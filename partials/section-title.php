@@ -1,3 +1,11 @@
+<?php
+
+$title = get_field('title');
+$description = get_field('description');
+$title_bgcolor = get_field('title_bgcolor');
+
+?>
+
 <section class="title">
 
     <div class="row-tight">
@@ -8,10 +16,12 @@
 
                 <div class="wrap">
 
+                <?php if ( ! is_page_template( 'templates/page-contact.php' ) ) { ?>
 					<h1>
 						<img src="<?= THEME_URL; ?>/assets/img/przepisnamistrza/logo.png" alt="Title img">
 						<span class="sr-only">Przepis na mistrza</span>
 					</h1>
+                <?php } ?>
 
 				</div>
 
@@ -23,16 +33,14 @@
 
         <div class="span3 span-right">
 
-            <div class="wrap" style="background-color: #e51b39">
+            <div class="wrap" style="background-color: <?php echo $title_bgcolor?>">
 
-				<div class="triangle-left" style="border-right-color: #e51b39"></div>
+				<div class="triangle-left" style="border-right-color: <?php echo $title_bgcolor?>"></div>
 
-                <h3>O programie</h3>
+                <h3><?php echo $title; ?></h3>
 
                 <p>
-                    Chcesz zdobyć cenne umiejętności i praktycznie nauczyć się zawodu, weź udział w naszym programie Przepis na mistrza.
-                    <br><br>
-                    Kierujemy go do uczniów techników oraz zasadniczych szkół zawodowych, którzy chcą rozwijać się w branży handlowej w zawodzie piekarza, cukiernika, wędliniarza lub sprzedawcy.
+                    <?php echo $description; ?>
                 </p>
 
             </div>

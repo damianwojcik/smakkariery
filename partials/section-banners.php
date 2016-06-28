@@ -3,50 +3,44 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
 
-            <?php
+            <?php if( have_rows('banners_group', 'option') ): ?>
 
-            $field_key_sponsors = "field_5770f8ab53756";
-            $field_key_media_sponsors = "field_5770f92653758";
-            $field_sponsors = get_field_object($field_key_sponsors);
-            $field_media_sponsors = get_field_object($field_key_media_sponsors);
+                <?php while ( have_rows('banners_group', 'option') ) : the_row(); ?>
 
-            $gallery_partners = get_field('banners_partners', 'option');
-            $gallery_media_partners = get_field('banners_media_partners', 'option');
+                    <?php
+                        $title = get_sub_field('title');
+                        $gallery = get_sub_field('gallery');
+                    ?>
 
-            ?>
+                    <?php if( $title ){ ?>
 
-            <div class="swiper-slide"><span><?php echo $field_sponsors['label']; ?></span></div>
+                        <div class="swiper-slide"><span><?php echo $title; ?></div>
+                    
+                    <?php } ?>
 
-             <?php foreach( $gallery_partners as $image ): ?>
+                    <?php if( $gallery ){ ?>
 
-                <div class="swiper-slide">
+                        <?php foreach ($gallery as $image) { ?>
 
-                    <a href="<?php echo $banner_url; ?>" target="_blank">
+                            <?php $link = get_field('link', $image['id']); ?>
 
-                        <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+                            <div class="swiper-slide">
 
-                    </a>
+                                <a href="<?php echo $link; ?>" target="_blank">
 
-                </div>
+                                    <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
 
-            <?php endforeach; ?>
+                                </a>
 
+                            </div>
 
-            <div class="swiper-slide"><span><?php echo $field_media_sponsors['label']; ?></span></div>
+                            <?php }//end foreach ?>
 
-            <?php foreach( $gallery_media_partners as $image ): ?>
+                        <?php }//endif ?>
 
-                <div class="swiper-slide">
+                <?php endwhile; ?>
 
-                    <a href="<?php echo $banner_url; ?>" target="_blank">
-
-                        <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
-
-                    </a>
-
-                </div>
-
-            <?php endforeach; ?>
+            <?php endif; ?>
 
         </div>
     </div>

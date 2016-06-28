@@ -9,8 +9,10 @@
 	//include php files
 	include("incl/general.php");
 
-	//include("incl/cpt.php");
+	include("incl/cpt.php");
 
 	include("incl/acf.php");
 
 	include("incl/widgets.php");
+
+	include("incl/custom-functions.php");

@@ -6,6 +6,8 @@
 
 			<article class="wrap-article">
 
+				<?php if(!is_page_template()){ ?>
+
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 					<?php the_date('d F Y', '<time>', '</time>'); ?>
@@ -17,6 +19,11 @@
 					<?php the_content(); ?>
 
 				<?php endwhile; endif; ?>
+
+				<?php } else{
+					if( function_exists( 'ninja_forms_display_form' ) ){ ninja_forms_display_form( 5 ); }
+					}
+				?>
 
 			</article>
 

@@ -13,8 +13,8 @@
 		));
 
 		acf_add_options_sub_page(array(
-			'page_title' 	=> 'Ustawienia strony',
-			'menu_title'	=> 'Ustawienia strony',
+			'page_title' 	=> 'Ustawienia',
+			'menu_title'	=> 'Ustawienia',
 			'parent_slug'	=> 'page-options',
 		));
 

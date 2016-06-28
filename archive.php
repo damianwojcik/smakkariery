@@ -21,25 +21,25 @@ $recent_posts = wp_get_recent_posts( $args );
 
 					$content = $recent['post_content'];
 			        $trimmed_content = wp_trim_words( $content, 25 );
-
-					var_dump($recent);
-
-					echo '<li>';
-					echo '<a class="article" href="' . get_permalink($recent["ID"]) . '">';
-
-					echo '<h2>' . $recent["post_title"] . '</h2>';
-
-					echo '<time>' . '20-06-2016' . '</time>';
-
-					echo '<p>' . $trimmed_content . '</p>';
-
-					echo '<div class="btn">Więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></div>';
-
-					echo '</a></li>';
-
-				}
+			        $date = date('n M, Y', strtotime($recent['post_date']));
 
 			?>
+
+				<li>
+					<a class="article" href="<?php echo get_permalink($recent["ID"]); ?>">
+
+						<h2><?php echo $recent["post_title"]; ?></h2>
+
+						<time><?php echo $date; ?></time>
+
+						<p><?php echo $trimmed_content; ?></p>
+
+						<div class="btn">Więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+
+					</a>
+				</li>
+
+				<?php } ?>
 
 
 			</ul>
