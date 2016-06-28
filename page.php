@@ -1,6 +1,22 @@
 <?php get_header(); ?>
 
 
+<?php
+	//template for child pages
+	if( $post->post_parent !== 0 ) { ?>
+
+	<!-- =================================================
+	section title
+	================================================== -->
+	<?php get_template_part("partials/section", "title"); ?>
+
+	<!-- =================================================
+	section content
+	================================================== -->
+	<?php get_template_part("partials/section", "content"); ?>
+
+<?php } else { ?>
+
 <!-- =================================================
 	section title
 ================================================== -->
@@ -10,10 +26,7 @@
 <!-- =================================================
 	section services
 ================================================== -->
-<!-- displayed only on "Parent" pages -->
-<?php if( sk_is_parent() ) { ?>
-	<?php get_template_part("partials/section", "services"); ?>
-<?php } ?>
+<?php get_template_part("partials/section", "services"); ?>
 
 
 <!-- =================================================
@@ -26,6 +39,8 @@
 	section testimonials
 ================================================== -->
 <?php get_template_part("partials/section", "testimonials"); ?>
+
+<?php } ?>
 
 
 <?php get_footer(); ?>
