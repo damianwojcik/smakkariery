@@ -23,6 +23,12 @@
 			'menu_title'	=> 'Bannery',
 			'parent_slug'	=> 'page-options',
 		));
+
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Social Media',
+			'menu_title'	=> 'Social Media',
+			'parent_slug'	=> 'page-options',
+		));
 		
 	}
 

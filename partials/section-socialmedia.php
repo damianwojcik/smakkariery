@@ -4,123 +4,56 @@
 
 			<div class="swiper-wrapper">
 
-				<!-- BEGIN SLIDE -->
-				<div class="swiper-slide">
+				<?php if( have_rows('social_box', 'option') ): ?>
 
-					<div class="slide-wrap" style="background-color: #435698">
+					<?php while ( have_rows('social_box', 'option') ) : the_row(); ?>
 
-						<img src="<?= THEME_URL; ?>/assets/img/social/facebook.png" alt="Facebook logo">
+						<?php
 
-						<div class="inner-wrap">
+							$logo = get_sub_field('logo');
+							$box_bgcolor = get_sub_field('box_bgcolor');
+							$details = get_sub_field('details');
+							$button_color = get_sub_field('button_color');
+							$button_txt = get_sub_field('button_txt');
+							$link = get_sub_field('link');
 
-							<p><em>Zdrowe batoniki musli z orzeszkami arachidowymi dodadzą energii od samego rana. Zobacz, jak je zrobić w domu!</em></p>
+						?>
 
-							<time>28 maja, 09.00</time>
+						<!-- BEGIN SLIDE -->
+						<div class="swiper-slide">
 
-						</div>
-						<!-- END inner-wrap -->
+							<div class="slide-wrap" style="background-color: <?php echo $box_bgcolor; ?>">
 
-						<div class="btn">Polub Carrefour Polska <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+								<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
 
-					</div>
+								<div class="inner-wrap">
 
-				</div>
-				<!-- END SLIDE -->
+									<p><?php echo $details; ?></p>
 
-				<!-- BEGIN SLIDE -->
-				<div class="swiper-slide">
+								</div>
+								<!-- END inner-wrap -->
 
-					<div class="slide-wrap" style="background-color: #FFF">
+								<a href="
+								<?php
+                                    if($link){
+	                                    echo $link;
+	                                }else {
+	                                    echo '#';
+	                                }
+                                ?>
+                                " target="_blank" class="btn" style="background-color: <?php echo $button_color; ?>"><?php echo $button_txt; ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
-						<img src="<?= THEME_URL; ?>/assets/img/social/linkedin.png" alt="Linkedin logo">
-
-						<div class="inner-wrap">
-
-							<p style="color: #626262">
-								Bądź na bieżąco z najnowszymi wydarzeniami na Linkedin.
-							</p>
-
-						</div>
-						<!-- END inner-wrap -->
-
-						<div class="btn btn-yellow">Sprawdź sieć kontaktów <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-
-					</div>
-
-				</div>
-				<!-- END SLIDE -->
-
-				<!-- BEGIN SLIDE -->
-				<div class="swiper-slide">
-
-					<div class="slide-wrap" style="background-color: #63AAEA">
-
-						<img src="<?= THEME_URL; ?>/assets/img/social/twitter.png" alt="Twitter logo">
-
-						<div class="inner-wrap">
-
-							<p><em>#Poland Carrefour modernizes its #Market concept with a new premium shopping experience <a href="http://bit.ly/Poland_premium-market">http://bit.ly/Poland_premium-market</a></em></p>
-
-							<time>@CarrefourGroup 27.05</time>
+							</div>
 
 						</div>
-						<!-- END inner-wrap -->
+						<!-- END SLIDE -->
 
-						<div class="btn">Obserwuj <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+					<?php endwhile; ?>
 
-					</div>
-
-				</div>
-				<!-- END SLIDE -->
-
-				<!-- BEGIN SLIDE -->
-				<div class="swiper-slide">
-
-					<div class="slide-wrap" style="background-color: #DD0025">
-
-						<img src="<?= THEME_URL; ?>/assets/img/social/gplus.png" alt="GooglePlus logo">
-
-						<div class="inner-wrap">
-
-							<p style="color: #FFF">
-								Dowiedz się pierwszy o nowościach na Google+
-							</p>
-
-						</div>
-						<!-- END inner-wrap -->
-
-						<div class="btn">Obserwuj <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-
-
-					</div>
-
-				</div>
-				<!-- END SLIDE -->
-
-				<!-- BEGIN SLIDE -->
-				<div class="swiper-slide">
-
-					<div class="slide-wrap" style="background-color: #d6d6d6">
-
-						<img src="<?= THEME_URL; ?>/assets/img/social/facebook.png" alt="Facebook logo">
-
-						<div class="inner-wrap">
-
-							<p><em>Zdrowe batoniki musli z orzeszkami arachidowymi dodadzą energii od samego rana. Zobacz, jak je zrobić w domu!</em></p>
-
-							<time>28 maja, 09.00</time>
-
-						</div>
-						<!-- END inner-wrap -->
-
-						<div class="btn">Polub Carrefour Polska <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-
-					</div>
-
-				</div>
-				<!-- END SLIDE -->
+				<?php endif; ?>
 
 			</div>
+			<!-- END swiper-wrapper -->
 
 			<!-- Add Arrows -->
 			<div class="swiper-button-next swiper-button-white"></div>

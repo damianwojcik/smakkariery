@@ -26,7 +26,15 @@
 
                             <div class="swiper-slide">
 
-                                <a href="<?php echo $link; ?>" target="_blank">
+                                <a href="
+                                    <?php
+                                        if($link){
+                                            echo $link;
+                                        }else {
+                                            echo '#';
+                                        }
+                                    ?>
+                                " target="_blank">
 
                                     <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
 

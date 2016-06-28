@@ -1881,7 +1881,8 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
-.btn {
+.btn,
+a.btn {
   display: inline-block;
   padding: 18px 20px;
   color: white;
@@ -1904,7 +1905,8 @@ button i,
 input[type="submit"] i,
 input[type="reset"] i,
 input[type="button"] i,
-.btn i {
+.btn i,
+a.btn i {
   padding-left: 15px;
 }
 
@@ -1923,7 +1925,10 @@ input[type="button"]:active,
 input[type="button"]:focus,
 .btn:hover,
 .btn:active,
-.btn:focus {
+.btn:focus,
+a.btn:hover,
+a.btn:active,
+a.btn:focus {
   color: #2647A1;
   background-color: #F3F3F3;
   outline: 0;
@@ -4435,13 +4440,13 @@ header.site-header nav ul li.current-menu-item a {
   }
 }
 
-.social-media .btn {
+.social-media a.btn {
   background-color: #FFF;
   color: #000;
 }
 
 @media (max-width: 1024px) {
-  .social-media .btn {
+  .social-media a.btn {
     width: 100%;
   }
 }
@@ -4453,7 +4458,7 @@ header.site-header nav ul li.current-menu-item a {
 
 .social-media .btn:hover,
 .social-media .btn.btn-yellow:hover {
-  background-color: #000;
+  background-color: #000 !important;
   color: #FFF;
 }
 
