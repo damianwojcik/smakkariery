@@ -1,111 +1,49 @@
-<ul class="accordion">
+<?php $child_pages = $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_parent = ".$post->post_parent."
+AND post_type = 'page' ORDER BY menu_order", 'OBJECT'); ?>
 
-    <li>
+<?php if ( $child_pages ) { ?>
 
-        <div class="accordion-heading" style="background-color: #2E80C6">
-            <span class="accordion-icon">
-                <img src="<?= THEME_URL; ?>/assets/img/przepisnamistrza/home.png" alt="Icon">
-            </span>
-            <span class="accordion-title">Spotkania w szkołach</span>
-        </div>
+    <ul class="accordion">
 
-        <div class="accordion-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/accordion-1.jpg')">
+    <?php foreach ( $child_pages as $pageChild ) : setup_postdata( $pageChild ); ?>
 
-            <div class="triangle-bottom" style="border-top-color: #2E80C6"></div>
+        <?php
+            $icon = get_field('icon', $pageChild);
+            $color = get_field('color', $pageChild);
+            $content = $pageChild->post_content;
+            $trimmed_content = wp_trim_words( $content, 50 );
+        ?>
 
-            <a href="#">
+        <li>
 
-                <h3>Rozpoczęliśmy rekrutację do
-                    <strong>
-                        Warsztatów
-                    </strong>
-                </h3>
+            <div class="accordion-heading" style="background-color: <?php echo $color; ?>">
+                <span class="accordion-icon">
+                    <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
+                </span>
+                <span class="accordion-title"><?php echo $pageChild->post_title; ?></span>
+            </div>
 
-            </a>
+            <div class="accordion-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/accordion-1.jpg')">
 
-        </div>
+                <div class="triangle-bottom" style="border-top-color: <?php echo $color; ?>"></div>
 
-    </li>
+                <a href="<?php echo get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>" >
 
-    <li>
+                    <h3>Rozpoczęliśmy rekrutację do
+                        <strong>
+                            Warsztatów
+                        </strong>
+                    </h3>
 
-        <div class="accordion-heading" style="background-color: #2647A1">
-            <span class="accordion-icon">
-                <img src="<?= THEME_URL; ?>/assets/img/przepisnamistrza/hat.png" alt="Icon">
-            </span>
-            <span class="accordion-title">Klasy patronackie</span>
-        </div>
+                </a>
 
-        <div class="accordion-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/articles/article-1.jpg')">
+            </div>
 
-            <div class="triangle-bottom" style="border-top-color: #2647A1"></div>
+        </li>
 
-            <a href="#">
+    <?php endforeach; ?>
 
-                <h3>Rozpoczęliśmy rekrutację do
-                    <strong>
-                        Badań
-                    </strong>
-                </h3>
 
-            </a>
+    </ul>
 
-        </div>
-
-    </li>
-
-    <li>
-
-        <div class="accordion-heading" style="background-color: #96005D">
-            <span class="accordion-icon">
-                <img src="<?= THEME_URL; ?>/assets/img/przepisnamistrza/tools.png" alt="Icon">
-            </span>
-            <span class="accordion-title">Praktyki zawodowe</span>
-        </div>
-
-        <div class="accordion-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/articles/article-2.jpg')">
-
-            <div class="triangle-bottom" style="border-top-color: #96005D"></div>
-
-            <a href="#">
-
-                <h3>Rozpoczęliśmy rekrutację do
-                    <strong>
-                        II edycji Programu Ambasadorskiego
-                    </strong>
-                </h3>
-
-            </a>
-
-        </div>
-
-    </li>
-
-    <li>
-
-        <div class="accordion-heading" style="background-color: #F28F2F">
-            <span class="accordion-icon">
-                <img src="<?= THEME_URL; ?>/assets/img/przepisnamistrza/graph.png" alt="Icon">
-            </span>
-            <span class="accordion-title">Dzień przedsiębiorczości</span>
-        </div>
-
-        <div class="accordion-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/articles/article-1.jpg')">
-
-            <div class="triangle-bottom" style="border-top-color: #F28F2F"></div>
-
-            <a href="#">
-
-                <h3>Rozpoczęliśmy rekrutację do
-                    <strong>
-                        Badań
-                    </strong>
-                </h3>
-
-            </a>
-
-        </div>
-
-    </li>
-
-</ul>
+<?php }//end if ?>

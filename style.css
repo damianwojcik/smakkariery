@@ -2494,7 +2494,7 @@ ul.offers-listing li h5 i {
 }
 
 .search-panel .wrap {
-  width: 400px;
+  width: auto;
   margin: 0 auto;
   padding: 10px 0;
   display: table;
