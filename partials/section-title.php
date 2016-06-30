@@ -18,11 +18,17 @@ $title_bgcolor = get_field('title_bgcolor', $post->post_parent);
 
                 <div class="wrap">
 
-                <?php if ( ! is_page_template( 'templates/page-contact.php' ) ) { ?>
-					<h1>
-						<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
-						<span class="sr-only"><?php the_title(); ?></span>
-					</h1>
+                <?php if ( is_page_template( 'templates/page-contact.php' ) ) { ?>
+
+                    <h1>Skontaktuj się z Carrefour</h1>
+
+                <?php } else { ?>
+
+                    <h1>
+                        <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+                        <span class="sr-only"><?php the_title(); ?></span>
+                    </h1>
+                    
                 <?php } ?>
 
 				</div>
@@ -39,11 +45,36 @@ $title_bgcolor = get_field('title_bgcolor', $post->post_parent);
 
 				<div class="triangle-left" style="border-right-color: <?php echo $title_bgcolor; ?>"></div>
 
-                <h3><?php echo $title; ?></h3>
+                <h3>
+                    <?php if ( is_page_template( 'templates/page-contact.php' ) ) { ?>
 
-                <p>
-                    <?php echo $description; ?>
-                </p>
+                        Dane kontaktowe
+
+                    <?php } else { ?>
+
+                        <?php echo $title; ?>
+
+                    <?php } ?>
+
+                </h3>
+
+                <?php if ( is_page_template( 'templates/page-contact.php' ) ) { ?>
+
+                    <ul class="contact-details">
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i><span>ul. Targowa 72, 03-734 Warszawa</span></li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i><span><a href="callto: 22 5​17 2116">22 5​17 2116</a></span></li>
+                        <li><i class="fa fa-envelope" aria-hidden="true"></i><span><a href="mailto: kontakt@carrefour.pl">kontakt@carrefour.pl</a></span></li>
+                    </ul>
+
+                <?php } else { ?>
+
+                    <p>
+                        <?php echo $description; ?>
+                    </p>
+
+                <?php } ?>
+
+                
 
             </div>
             <!-- END wrap -->

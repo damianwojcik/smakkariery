@@ -4,108 +4,77 @@
     width: 100%
     background: $footer-bottom-bg
 
-    //navigation
-    nav
-        display: table
-        float: left
-        +mobile
-            display: block
-            float: none
-            text-align: center
+    .row-tight
+        padding-bottom: 90px
+        +large-desktop
+            padding-bottom: 0
 
-        ul
-            margin: 0 0 0 25px
-            padding: 0
-            +mobile
-                margin: 0
-            +iphone
-                margin: 15px 0 10px 0
+        .span4:first-child .wrap
+            +medium-handset
+                padding-top: 50px
 
-            li
-                margin: 0
-                padding: 0
-                display: inline-block
-                position: relative
-                +iphone
-                    display: block
+        .span4:last-child .wrap
+            box-shadow: none
+            text-align: right
+            +large-desktop
+                text-align: left
+            +medium-handset
+                text-align: center
 
-                &:not(:first-child):after
-                    content: '/'
-                    display: inline-block
-                    position: absolute
-                    top: 19px
-                    left: -3px
-                    color: #5a5a5a
-                    +iphone
-                        display: none
+        .span4:nth-child(2) .wrap
+            +large-desktop
+                box-shadow: none
 
-                a
-                    color: #cacaca
-                    padding: 25px 18px 28px 18px
-                    display: block
-                    font-size: 12.5px
-                    line-height: 1
-                    +mobile
-                        padding: 20px 18px
-                    +iphone
-                        padding: 10px 0
+    ul
+        list-style-type: none
 
-                    &:hover
-                        color: #fafafa
+    ul,
+    li
+        margin: 0
+        padding: 0
 
-    //copyrights
-    p.copy
-        float: right
-        font-size: 12px
-        color: #5a5a5a
-        padding: 27px 0
+    h2
+        color: #F3F3F3
+        text-transform: uppercase
+        font-size: 13.5px
         line-height: 1
-        margin: 0 45px 0 0
-        +mobile
-            float: none
-            display: block
+        font-weight: bold
+
+    .wrap
+        padding: 50px
+        display: block
+        box-shadow: inset -1px 0 0 rgba(255,255,255,0.1)
+        min-height: 215px
+        +large-desktop
+            padding: 40px
+        +medium-handset
+            padding: 30px
+            box-shadow: none
+            min-height: auto
             text-align: center
-            margin: 0
-            padding: 20px 0
+
+        li
+            padding: 5px 0
 
         a
-            color: inherit
+            color: #5a5a5a
+            font-size: 13.5px
+            font-weight: 600
 
             &:hover
                 color: #cacaca
 
-    //footer logo
     .footer-logo
-        display: block
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        margin: auto
-        width: 80px
-        text-align: center
-        height: 66px
-        +tablet
-            left: 70px
-        +mobile
-            position: relative
-            display: block
-            left: auto
-            text-align: center
-            padding: 10px 0 0 0
+        margin-bottom: 75px
+        display: inline-block
+        +large-desktop
+            margin-bottom: 60px
+        +medium-handset
+            margin-bottom: 30px
 
-        img
-            position: absolute
-            top: 0
-            bottom: 0
-            left: 0
-            right: 0
-            margin: auto
-            display: inline-block
-            filter: brightness(0) invert(1)
-            +transition(all 0.4s ease-in-out)
-
-        &:hover
-            img
-                filter: none
+    p.copy
+        font-size: 12px
+        color: #5a5a5a
+        line-height: 1
+        font-weight: 600
+            

@@ -66,12 +66,16 @@ $section_height: 460px
                 h1
                     display: table-cell
                     vertical-align: middle
-                    color: $blue
+                    color: #FFF
                     text-transform: uppercase
                     font-family: $bebas
                     font-weight: bold
                     letter-spacing: 0px
                     font-size: 70px
+                    +large-desktop
+                        font-size: 60px
+                    +tablet
+                        font-size: 50px
 
                     img
                         max-height: 120px

@@ -2,15 +2,27 @@
 
 	<div class="row-tight">
 
-		<div class="span5 span-left" style="background-image: url('<?= THEME_URL; ?>/assets/img/intro-bg.jpg')">
+		<div class="span5 span-left" style="background-image: url('<?= THEME_URL; ?>/assets/img/intro-bg-2.jpg')">
 
             <div class="wrap">
 
-				<img src="<?= THEME_URL; ?>/assets/img/smakkariery-white.png" alt="Smak Kariery">
+                <div class="inner-wrap">
 
-                <h2>Program <br> Edukacyjny</h2>
+                    <h1>
+                        <img src="<?= THEME_URL; ?>/assets/img/smakkariery.png" alt="Smak Kariery"> Program Edukacyjny
+                    </h1>
 
-                <h1>Carrefour Polska</h1>
+                    <span>
+                        Smak to kwestia gustu. Każdy powinien robić to,<br>
+                        co lubi, a <strong>sukces osiągniesz poprzez właściwe <br>
+                        dobranie składników</strong>. My dajemy Ci pewność<br>
+                        najlepszego połączenia pracy i pasji. Biorąc udział<br>
+                        w naszym Programie Edukacyjnym znajdziesz<br>
+                        przepis na doskonałą karierę!
+                    </span>
+
+                </div>
+                <!-- END inner-wrap -->
 
             </div>
 

@@ -5,155 +5,158 @@ $section_height: 770px
     .row-tight
         height: $section_height
 
-        .span-left
-            height: 100%
-            +background_img
-            text-align: center
-            display: table
-            position: relative
-            +desktop
-                height: 430px
-            +mobile
-                height: 475px
-            +iphone
-                height: 420px
+    .span-left
+        height: 100%
+        +background_img
+        text-align: center
+        display: table
+        position: relative
+        +desktop
+            height: 430px
+        +mobile
+            height: 475px
+        +iphone
+            height: 420px
 
-            .wrap
-                display: table-cell
-                vertical-align: middle
-                width: 100%
-                text-align: center
-                background-color: rgba(0, 0, 0, 0.4)
-                +large-desktop
-                    font-size: 80%
-                +desktop
-                    height: 400px
-                +mobile
-                    font-size: 75%
-                +iphone
-                    font-size: 60%
-
-
-            h1,
-            h2
-                color: #FFF
-                display: block
-                line-height: 1
-
-            h2
-                font-size: 6.8em
-                margin-bottom: 20px
-                font-family: $bebas
-                font-weight: bold
-
-                br
-                    +desktop
-                        display: none
-                    +mobile
-                        display: block
+        &:hover
+            span
+                opacity: 1
 
             h1
-                font-size: 2.5em
-                font-family: $bebas
-                font-weight: normal
-                +desktop
-                    font-size: 3em
+                transform: translateY(0px)
 
-            img
-                display: inline-block
-                width: 202px
-                height: 66px
-                margin-bottom: 20px
-                +desktop
-                    margin-bottom: 40px
-                +mobile
-                    background-size: 165px
-                    margin-bottom: 25px
-                +iphone
-                    background-size: 140px
-                    margin-bottom: 15px
-
-        .span-right
+        .wrap
+            display: table
+            width: 60%
+            text-align: center
+            margin: auto
             height: 100%
-            +desktop
-                font-size: 110%
+            +large-desktop
+                font-size: 80%
+                width: 80%
+            +mobile
+                font-size: 75%
+            +iphone
+                font-size: 60%
+            
+        .inner-wrap
+            display: table-cell
+            vertical-align: middle
+
+        h1
+            color: #FFF
+            display: block
+            line-height: 1
+            letter-spacing: 0
+            font-size: 4.5em
+            font-family: $bebas
+            font-weight: bold
+            transform: translateY(45px)
+            transition: transform 0.3s ease-in-out 0s
             +tablet
-                font-size: 100%
+                margin-bottom: 15px
+                font-size: 4em
+
+        img
+            display: block
+            margin: auto
+            margin-bottom: 30px
+            width: auto
+            height: 85px
+            +tablet
+                height: 75px
+                margin-bottom: 25px
+            +medium-handset
+                height: 65px
+
+        span
+            color: #FFF
+            line-height: 1.6
+            font-size: 1.1em
+            opacity: 0
+            transition: opacity 0.3s ease-in-out 0s
+
+    .span-right
+        height: 100%
+        +desktop
+            font-size: 110%
+        +tablet
+            font-size: 100%
+        +mobile
+            height: auto
+        +iphone
+            font-size: 85%
+
+        .row-tight
+            height: 50%
             +mobile
                 height: auto
-            +iphone
-                font-size: 85%
+                &:first-child
+                    border-bottom: 1px solid rgba(0,0,0,0.1)
 
-            .row-tight
-                height: 50%
+            .caption-banner
                 +mobile
-                    height: auto
-                    &:first-child
-                        border-bottom: 1px solid rgba(0,0,0,0.1)
+                    height: 700px
+                    .wrap,
+                    .text-wrap
+                        height: 50%
+                +iphone
+                    height: 560px
 
-                .caption-banner
+            .color-overlay
+                +tablet
+                    padding: 30px 40px 40px 40px
+                +mobile
+                    padding: 50px 40px 40px 40px
+                +iphone
+                    padding: 30px 30px 40px 30px
+
+            img
+                position: absolute
+                top: 0
+                bottom: 0
+                left: 0
+                right: 0
+                margin: auto
+                max-height: 90px
+                max-width: 315px
+
+
+            &:first-child
+
+                .wrap
                     +mobile
-                        height: 700px
-                        .wrap,
-                        .text-wrap
-                            height: 50%
-                    +iphone
-                        height: 560px
+                        .triangle-left
+                            width: 18px
+                            height: 0px
+                            left: 0
+                            right: 0
+                            top: -18px
+                            bottom: auto
+                            +transform(rotate(90deg))
+
 
                 .color-overlay
-                    +tablet
-                        padding: 30px 40px 40px 40px
+                    background-color: rgba(229, 27, 57, 0.8)
+
+            &:hover .color-overlay
+                opacity: 1
+
+            &:last-child
+
+                .wrap
                     +mobile
-                        padding: 50px 40px 40px 40px
-                    +iphone
-                        padding: 30px 30px 40px 30px
+                        .triangle-right
+                            width: 18px
+                            height: 0px
+                            left: 0
+                            right: 0
+                            top: auto
+                            bottom: -18px
+                            +transform(rotate(90deg))
 
-                img
-                    position: absolute
-                    top: 0
-                    bottom: 0
-                    left: 0
-                    right: 0
-                    margin: auto
-                    max-height: 90px
-                    max-width: 315px
+                .color-overlay
+                    background-color: rgba(141, 202 ,70, 0.8)
 
-
-                &:first-child
-
-                    .wrap
-                        +mobile
-                            .triangle-left
-                                width: 18px
-                                height: 0px
-                                left: 0
-                                right: 0
-                                top: -18px
-                                bottom: auto
-                                +transform(rotate(90deg))
-
-
-                    .color-overlay
-                        background-color: rgba(229, 27, 57, 0.8)
-
-                &:hover .color-overlay
-                    opacity: 1
-
-                &:last-child
-
-                    .wrap
-                        +mobile
-                            .triangle-right
-                                width: 18px
-                                height: 0px
-                                left: 0
-                                right: 0
-                                top: auto
-                                bottom: -18px
-                                +transform(rotate(90deg))
-
-                    .color-overlay
-                        background-color: rgba(141, 202 ,70, 0.8)
-
-                &:hover .color-overlay
-                    opacity: 1
+            &:hover .color-overlay
+                opacity: 1

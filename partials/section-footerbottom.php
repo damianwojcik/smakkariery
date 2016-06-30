@@ -1,18 +1,70 @@
 <section class="footer-bottom">
 
-    <nav>
+	<h1 class="offscreen">Stopka strony</h1>
 
-        <?php dynamic_sidebar('footer_menu'); ?>
+	<div class="container">
 
-    </nav>
+		<div class="row-tight">
 
-    <a href="<?= SITE_URL; ?>" class="footer-logo">
-        <img src="<?= THEME_URL; ?>/assets/img/logo-footer.png" alt="Carrefour Logo">
-    </a>
+			<div class="span4">
 
-    <p class="copy">
-        <a href="http://time4.pl/" target="_blank" title="Time4 Custom Publishing">Time4.pl</a> &copy; <?= current_time('Y'); ?>
-    </p>
+				<div class="wrap">
+
+					<?php dynamic_sidebar('footer_left'); ?>
+
+				</div>
+				<!-- END wrap -->
+
+			</div>
+			<!-- END span4 -->
+
+			<div class="span4">
+
+				<div class="wrap">
+
+					<?php dynamic_sidebar('footer_middle'); ?>
+
+				</div>
+				<!-- END wrap -->
+
+			</div>
+			<!-- END span4 -->
+
+			<div class="span4">
+
+				<div class="wrap">
+
+					<?php dynamic_sidebar('footer_right'); ?>
+
+				</div>
+				<!-- END wrap -->
+
+			</div>
+			<!-- END span4 -->
+
+			<div class="span4">
+
+				<div class="wrap">
+
+					<h2 class="offscreen">Prawa autorskie</h2>
+
+					<a href="<?= SITE_URL; ?>" class="footer-logo">
+				        <img src="<?= THEME_URL; ?>/assets/img/logo-footer.jpg" alt="Carrefour Logo">
+				    </a>
+
+				    <p class="copy">
+				        Made with passion by <a href="http://time4.pl/" target="_blank" title="Time4 Custom Publishing">Time4.pl</a> &copy; <?= current_time('Y'); ?>
+				    </p>
+
+			    </div>
+				<!-- END wrap -->
+
+			</div>
+			<!-- END span4 -->
+
+		</div>
+
+	</div>
 
 </section>
 <!-- END section footer-bottom -->
