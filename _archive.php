@@ -51,5 +51,4 @@ $recent_posts = wp_get_recent_posts( $args );
 <!-- END section news -->
 
 
-
 <?php get_footer(); ?>

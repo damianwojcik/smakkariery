@@ -136,7 +136,7 @@
 								<?php } ?>
 
 								</div>
-								END color-overlay
+								<!-- END color-overlay -->
 
 							</div>
 							<!-- END text-wrap -->

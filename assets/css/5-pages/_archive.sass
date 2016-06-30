@@ -1,0 +1,87 @@
+section.archive
+	.container
+		padding: 60px 80px 40px 80px
+
+	header
+		display: table
+		width: 100%
+		margin-bottom: 60px
+
+	h1
+		font-family: $bebas
+		font-weight: bold
+		font-size: 3.2em
+		letter-spacing: 0
+		text-transform: uppercase
+		color: #000
+		float: left
+		margin-bottom: 0
+
+	ul
+		list-style-type: none
+		display: table
+		width: 100%
+		margin-bottom: 0
+
+		li
+			margin-bottom: 0
+
+	nav
+		float: right
+
+		li
+			display: inline-block
+			float: left
+			border: 2px solid #b6b6b6
+			margin-left: 5px
+
+			&:first-child
+				margin-left: 0
+
+			&:hover
+				border: 2px solid darken(#b6b6b6, 20%)
+				a
+					color: darken(#b6b6b6, 20%)
+
+			&.active,
+			&.active:hover
+				border: 2px solid #b6b6b6
+				background-color: #b6b6b6
+				cursor: default
+				a
+					color: #FFF
+
+			a
+				display: block
+				padding: 20px 30px
+				color: #b6b6b6
+				font-family: $bebas
+				font-weight: bold
+				font-size: 2em
+				line-height: 1
+
+//articles-list
+ul.articles-list
+
+	li
+		display: block
+		width: 25%
+		height: 400px
+		float: left
+		padding: 0 6px 12px 6px
+
+		a
+			display: block
+			width: 100%
+			height: 100%
+			background-color: #e6e6e6
+
+
+		&:nth-child(2n) a
+			background-color: #dadada
+
+		&:nth-child(4n+1)
+			padding-left: 0
+
+		&:nth-child(4n+4)
+			padding-right: 0

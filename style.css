@@ -5516,3 +5516,105 @@ aside ul.accordion li:first-child .accordion-wrap {
     width: 100%;
   }
 }
+
+section.archive .container {
+  padding: 60px 80px 40px 80px;
+}
+
+section.archive header {
+  display: table;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+section.archive h1 {
+  font-family: "bebas_neue", serif;
+  font-weight: bold;
+  font-size: 3.2em;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #000;
+  float: left;
+  margin-bottom: 0;
+}
+
+section.archive ul {
+  list-style-type: none;
+  display: table;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+section.archive ul li {
+  margin-bottom: 0;
+}
+
+section.archive nav {
+  float: right;
+}
+
+section.archive nav li {
+  display: inline-block;
+  float: left;
+  border: 2px solid #b6b6b6;
+  margin-left: 5px;
+}
+
+section.archive nav li:first-child {
+  margin-left: 0;
+}
+
+section.archive nav li:hover {
+  border: 2px solid #838383;
+}
+
+section.archive nav li:hover a {
+  color: #838383;
+}
+
+section.archive nav li.active, section.archive nav li.active:hover {
+  border: 2px solid #b6b6b6;
+  background-color: #b6b6b6;
+  cursor: default;
+}
+
+section.archive nav li.active a, section.archive nav li.active:hover a {
+  color: #FFF;
+}
+
+section.archive nav li a {
+  display: block;
+  padding: 20px 30px;
+  color: #b6b6b6;
+  font-family: "bebas_neue", serif;
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 1;
+}
+
+ul.articles-list li {
+  display: block;
+  width: 25%;
+  height: 400px;
+  float: left;
+  padding: 0 6px 12px 6px;
+}
+
+ul.articles-list li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #e6e6e6;
+}
+
+ul.articles-list li:nth-child(2n) a {
+  background-color: #dadada;
+}
+
+ul.articles-list li:nth-child(4n+1) {
+  padding-left: 0;
+}
+
+ul.articles-list li:nth-child(4n+4) {
+  padding-right: 0;
+}
