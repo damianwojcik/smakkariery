@@ -59,6 +59,11 @@
 					================================================== -->
 					<?php //get_template_part("partials/aside", "testimonials"); ?>
 
+					<!-- =================================================
+						aside news
+					================================================== -->
+					<?php get_template_part("partials/aside", "news"); ?>
+
 				</div>
 				<!-- END row -->
 

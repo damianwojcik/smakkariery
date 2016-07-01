@@ -1,7 +1,7 @@
 <?php
 
-$args = array( 'numberposts' => '6', 'category' => '4' );
-$recent_posts = wp_get_recent_posts( $args );
+	$args = array( 'numberposts' => '3', 'category' => '4' );
+	$recent_posts = wp_get_recent_posts( $args );
 
 ?>
 
@@ -10,41 +10,7 @@ $recent_posts = wp_get_recent_posts( $args );
 
 	<div class="row-tight">
 
-		<div class="span7">
-
-			<ul>
-
-				<?php
-
-				foreach( $recent_posts as $recent ){
-
-					$content = $recent['post_content'];
-			        $trimmed_content = wp_trim_words( $content, 25 );
-			        $date = date('n M, Y', strtotime($recent['post_date']));
-
-				?>
-
-				<li>
-					<a class="article" href="<?php echo get_permalink($recent["ID"]); ?>">
-
-						<h2><?php echo $recent["post_title"]; ?></h2>
-
-						<time><?php echo $date; ?></time>
-
-						<p><?php echo $trimmed_content; ?></p>
-
-						<div class="btn">Więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-
-					</a>
-				</li>
-
-				<?php } ?>
-				
-			</ul>
-		</div>
-		<!-- END span7 -->
-
-		<div class="span3">
+		<div class="span3 span-right">
 
 			<div class="quote-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/quotes-bg.jpg')">
 
@@ -75,6 +41,58 @@ $recent_posts = wp_get_recent_posts( $args );
 
 		</div>
 		<!-- END span3 -->
+
+		<div class="span7 span-left">
+
+			<?php if( $recent_posts ) { ?>
+
+				<ul class="article-list-large">
+
+				<?php
+
+				foreach( $recent_posts as $recent ){
+
+					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+					$content = $recent['post_content'];
+					$trimmed_content = wp_trim_words ( $content, 80 );
+			        $date = date('n M, Y', strtotime($recent['post_date']));
+
+				?>
+
+					<li>
+
+						<article>
+
+							<a href="<?php echo get_permalink($recent["ID"]); ?>">
+
+								<time><?php echo $date; ?></time>
+
+								<h2><?php echo $recent["post_title"]; ?></h2>
+
+								<?php if( !empty($thumbnail) ){ ?>
+
+								<img src="<?php echo $thumbnail[0]; ?>" alt="<?php echo $title; ?>">
+
+								<?php } //end if ?>
+
+								<p><?php echo $trimmed_content; ?></p>
+
+								<div class="read-more">Czytaj więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+
+							</a>
+
+						</article>
+
+					</li>
+
+				<?php } //end foreach ?>
+
+				</ul>
+
+			<?php } //end if ?>
+
+		</div>
+		<!-- END span7 -->
 
 	</div>
 

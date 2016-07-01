@@ -2,7 +2,7 @@
 
 	<div class="row-tight">
 
-		<div class="span5">
+		<div class="span5 span-left">
 
 			<div class="img-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/featured-bg.jpg')">
 
@@ -24,9 +24,9 @@
 		</div>
 		<!-- END span5 -->
 
-		<div class="span5">
+		<div class="span5 span-right">
 
-			<div class="wrap">
+			<!-- <div class="module-offers">
 
 				<header>
 
@@ -77,8 +77,33 @@
 
 				<a href="#" class="btn btn-red">Zobacz wszystkie oferty <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
-			</div>
-			<!-- END wrap -->
+			</div> -->
+			<!-- END module-offers -->
+
+			<a href="http://www.pracuj.pl/poznaj-pracodawce/carrefour-polska-sp-z-o.o.,88/praca" class="module-offers-cta">
+
+				<header>
+
+					<div class="triangle-left" style="border-right-color: #FFF"></div>
+
+					<div class="wrap">
+
+						<h1>Dołącz do nas!</h1>
+
+						<h2>Tu znajdziesz aktualne oferty pracy</h2>
+
+						<div class="btn">Zobacz więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+
+					</div>
+					<!-- END wrap -->
+
+				</header>
+
+				<div class="img-wrap"></div>
+				<!-- END img-wrap -->
+				
+			</a>
+			<!-- END module-offers-cta -->
 
 		</div>
 		<!-- END span5 -->

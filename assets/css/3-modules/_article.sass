@@ -1,0 +1,96 @@
+article
+	height: 100%
+
+	a
+		height: 100%
+
+	h2
+		font-family: $bebas
+		font-weight: bold
+		font-size: 2em
+		letter-spacing: 0
+		color: #000
+		text-transform: uppercase
+		margin-bottom: 15px
+		line-height: 1
+		height: 30px
+		overflow: hidden
+		+mobile
+			height: auto
+		+iphone
+			font-size: 1.7em
+			margin-bottom: 10px
+
+	p
+		color: #626262
+		font-size: 1.1em
+		line-height: 1.8
+		height: 95px
+		overflow: hidden
+		+tablet
+			font-size: 1
+			line-height: 1.4
+			height: 115px
+		+mobile
+			height: auto
+		+iphone
+			height: 132px
+			font-size: 0.95em
+			line-height: 1.3
+
+	time
+		color: #888888
+		display: block
+		margin-bottom: 15px
+		font-style: italic
+		font-size: 14px
+		line-height: 1
+		font-weight: 600
+		+iphone
+			margin-bottom: 15px
+			font-size: 13px
+
+	.read-more
+		color: #0b4da3
+		font-size: 1.2em
+		font-weight: 600
+		+transition(all 0.4s ease-in-out)
+		+tablet
+			font-size: 1em
+		+iphone
+			font-size: 0.95em
+
+		i
+			font-size: 13px
+			padding-left: 5px
+			+tablet
+				font-size: 11px
+			+iphone
+				font-size: 10px
+
+	.wrap
+		+background-img
+		width: 100%
+		height: 50%
+		position: relative
+		+mobile
+			height: 300px
+		+iphone
+			height: 200px
+
+		.color-overlay
+			position: absolute
+			display: block
+			width: 100%
+			height: 100%
+			background-color: rgba(0,0,0,0.2)
+			opacity: 1
+			+transition(all 0.4s ease-in-out)
+
+	.text-wrap
+		width: 100%
+		height: 50%
+		padding: 35px
+		position: relative
+		+tablet
+			padding: 30px

@@ -1,0 +1,72 @@
+section.gallerypanel
+
+	.wrap
+		display: table
+		width: 100%
+		background-image: url('assets/img/section-gallery.jpg')
+		+background_img
+		position: relative
+
+		&:hover
+			.inner-wrap:after
+				opacity: 1
+			span i
+				opacity: 1
+				transform: translatex(0px)
+				+iphone
+					transform: none
+
+			img
+				transform: scale(1.1)
+
+	.inner-wrap
+		display: table-cell
+		vertical-align: middle
+		text-align: center
+
+		&:after
+			content: ''
+			display: block
+			width: 100%
+			height: 100%
+			background-color: rgba(255,255,255,0.1)
+			opacity: 0
+			position: absolute
+			left: 0
+			top: 0
+			+transition(all 0.4s ease-in-out)
+
+	img
+		display: inline-block
+		padding-right: 40px
+		position: relative
+		top: 10px
+		+transition(all 0.4s ease-in-out)
+		+iphone
+			display: none
+
+	span
+		display: inline-block
+		color: #FFF
+		line-height: 120px
+		font-family: $bebas
+		font-weight: bold
+		text-transform: uppercase
+		font-size: 30px
+		+iphone
+			font-size: 20px
+			line-height: 90px
+
+		i
+			padding-left: 15px
+			font-size: 20px
+			position: relative
+			top: -3px
+			opacity: 0
+			transform: translatex(-20px)
+			+transition(all 0.4s ease-in-out)
+			+iphone
+				font-size: 14px
+				opacity: 1
+				padding-left: 10px
+				transform: none
