@@ -52,7 +52,8 @@
 
 				foreach( $recent_posts as $recent ){
 
-					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+					$post_id = $recent["ID"];
+					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'large' );
 					$content = $recent['post_content'];
 					$trimmed_content = wp_trim_words ( $content, 80 );
 			        $date = date('n M, Y', strtotime($recent['post_date']));
@@ -61,7 +62,7 @@
 
 					<li>
 
-						<article>
+						<article class="news-item">
 
 							<a href="<?php echo get_permalink($recent["ID"]); ?>">
 
