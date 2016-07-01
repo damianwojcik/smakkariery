@@ -36,7 +36,7 @@
                                     ?>
                                 " target="_blank">
 
-                                    <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+                                    <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
 
                                 </a>
 

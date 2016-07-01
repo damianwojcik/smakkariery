@@ -26,74 +26,81 @@
 
 		</header>
 
-		<ul class="articles-list">
+		<?php if ( have_posts() ) : ?>
 
-			<li>
+			<ul class="articles-list">
 
-				<a class="caption-banner" href="<?php echo get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>">
+				<?php while( have_posts() ) : the_post(); ?>
 
-					<footer>
+				<?php
 
-						<div class="text-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/przepisnamistrza/service-1.jpg')">
+					$thumbnail = wp_get_attachment_image_src ( get_post_thumbnail_id(), 'large');
+					$date = get_the_date();
+					$title = get_the_title();
+					$content = get_the_content();
+					$trimmed_content = wp_trim_words ( $content, 50 );
 
-							<div class="color-overlay">
+				?>
 
-								<h2><?php echo $pageChild->post_title; ?></h2>
+				<li>
 
-								<p><?php echo $trimmed_content; ?></p>
+					<article>
+
+						<a href="<?php the_permalink(); ?>">
+
+							<div class="wrap" 
+								<?php if( !empty($thumbnail) ){ ?>
+									style="background-image: url('<?php echo $thumbnail[0]; ?>')"
+								<?php } ?>
+							>
+									<?php if( empty($thumbnail) ){ ?>
+										<div class="image-placeholder">
+							            	<i class="fa fa-picture-o" aria-hidden="true"></i>
+							            </div>
+									<?php } else { ?>
+										<div class="color-overlay"></div>
+									<?php } ?>
+								</div>
+							<!-- END wrap -->
+
+							<div class="text-wrap">
+
+								<div class="triangle-top" style="border-bottom-color: #E8E8E8"></div>
+								
+								<time><?php echo $date; ?></time>
+
+								<h2><?php echo $title; ?></h2>
+
+								<p>
+									<?php echo $trimmed_content; ?>
+								</p>
+
+								<div class="read-more">Czytaj więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
 
 							</div>
+							<!-- END text-wrap -->
 
-						</div>
-						<!-- END text-wrap -->
+						</a>
 
-					</footer>
+					</article>
 
-					<header>
+				</li>
 
-						<div class="wrap" style="background-color: lime">
+			<?php endwhile; ?>
 
-							<div class="triangle-top" style="border-bottom-color: lime"></div>
+			</ul>
 
-							<div class="heading">
+			<div class="pagination">
+				<div class="nav-previous"><?php next_posts_link( 'Poprzednie' ); ?></div>
+				<div class="nav-next"><?php previous_posts_link( 'Następne' ); ?></div>
+			</div>
+			<!-- END pagination -->
 
-								<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
+		<?php else : ?>
 
-								<h2><?php echo $pageChild->post_title; ?></h2>
+			<p><?php _e('Przepraszamy, niestety nie znaleziono żadnych wpisów spełniających Twoje kryteria.'); ?></p>
 
-							</div>
-
-						</div>
-						<!-- ENR wrap -->
-
-					</header>
-
-				</a>
-				<!-- END caption-banner -->
-
-			</li>
-
-			<li>
-				<a href="#">2</a>
-			</li>
-
-			<li>
-				<a href="#">3</a>
-			</li>
-
-			<li>
-				<a href="#">4</a>
-			</li>
-
-			<li>
-				<a href="#">5</a>
-			</li>
-
-			<li>
-				<a href="#">1</a>
-			</li>
-
-		</ul>
+		<?php endif; ?>
 
 	</div>
 
