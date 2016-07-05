@@ -23,7 +23,7 @@
 
 		<li>
 
-			<article class="news-item">
+			<article class="news-entry">
 
 				<a href="<?php echo get_permalink($recent["ID"]); ?>">
 
@@ -34,6 +34,12 @@
 					<?php if( !empty($thumbnail) ){ ?>
 
 						<img src="<?php echo $thumbnail[0]; ?>" alt="<?php echo $title; ?>">
+
+					<?php } else { ?>
+
+						<div class="image-placeholder">
+							<i class="fa fa-picture-o" aria-hidden="true"></i>
+						</div>
 
 					<?php } //end if ?>
 

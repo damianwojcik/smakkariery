@@ -6,6 +6,7 @@ $desktop-width: 1024px
 $tablet-width: 768px
 $medium-handset-width: 600px
 $mobile-width: 480px
+$medium-mobile-width: 400px
 $iphone-width: 380px
 
 
@@ -27,6 +28,10 @@ $iphone-width: 380px
 
 =mobile
   @media (max-width: #{$tablet-width})
+    @content
+
+=medium-mobile
+  @media (max-width: #{$medium-mobile-width})
     @content
 
 =iphone

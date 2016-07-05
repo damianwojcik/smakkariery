@@ -4,15 +4,16 @@
         margin: 0 auto
         padding: 100px 0
         +large-desktop
-            padding: 75px 0
+            padding: 75px 40px
+            width: 100%
             font-size: 95%
         +desktop
-            padding: 35px 0
-            width: 90%
+            padding: 35px 40px
         +mobile
-            padding: 45px 0
-            width: 85%
             font-size: 90%
+        +iphone
+            padding: 20px
+            font-size: 80%
 
         time
             font-size: 1.2em
@@ -65,3 +66,22 @@
                 padding: 20px
             +iphone
                 padding: 10px
+
+//single
+.single
+    .content
+        article.wrap-article
+            width: 80%
+            margin: 0 auto
+            padding: 50px 0
+            +large-desktop
+                padding: 45px 40px
+                width: 100%
+                font-size: 95%
+            +desktop
+                padding: 35px 40px
+            +mobile
+                font-size: 90%
+            +iphone
+                padding: 20px
+                font-size: 80%

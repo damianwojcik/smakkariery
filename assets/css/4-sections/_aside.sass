@@ -31,26 +31,32 @@ aside
                 text-align: left
                 position: relative
                 cursor: pointer
+                +desktop
+                    text-align: center
+                +medium-mobile
+                    text-align: left
 
                 .accordion-icon
                     width: 180px
                     height: 100%
                     text-align: center
                     display: table-cell
+                    +large-desktop
+                        width: 160px
                     +desktop
                         display: inline-block
-                        height: 160px
-                        margin-left: 25%
-                    +mobile
-                        margin-left: 10%
+                        width: 100px
+                    +medium-mobile
+                        width: 120px
                     +iphone
-                        margin-left: 0
-                        width: 160px
+                        width: 90px
+                        margin-left: 10px
 
                     img
                         display: inline-block
                         height: 60px
                         margin-top: 50px
+
 
                 .accordion-title
                     height: 100%
@@ -61,12 +67,10 @@ aside
                         position: relative
                         height: auto
                         top: -15px
-                    +mobile
-                        max-width: 170px
                         font-size: 90%
                     +iphone
                         font-size: 80%
-                        max-width: 150px
+                        max-width: 200px
 
             .accordion-wrap
                 +background_img
@@ -128,6 +132,10 @@ aside
 
             &:first-child .accordion-wrap
                 display: block
+
+    ul.article-list-large
+        li:nth-child(2)
+            background-color: transparent
 
     .testimonials
         .caption-banner

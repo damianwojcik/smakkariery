@@ -20,7 +20,7 @@ $title_bgcolor = get_field('title_bgcolor', $post->post_parent);
 
                 <?php if ( is_page_template( 'templates/page-contact.php' ) ) { ?>
 
-                    <h1>Skontaktuj się z Carrefour</h1>
+                    <h1>Skontaktuj się z nami</h1>
 
                 <?php } else { ?>
 
@@ -48,7 +48,7 @@ $title_bgcolor = get_field('title_bgcolor', $post->post_parent);
                 <h3>
                     <?php if ( is_page_template( 'templates/page-contact.php' ) ) { ?>
 
-                        Dane kontaktowe
+                        Carrefour Polska Sp. z.o.o.
 
                     <?php } else { ?>
 

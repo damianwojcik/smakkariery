@@ -44,7 +44,7 @@
 
 				<li>
 
-					<article>
+					<article class="news-entry">
 
 						<a href="<?php the_permalink(); ?>">
 

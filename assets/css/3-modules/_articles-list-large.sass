@@ -12,6 +12,10 @@ ul.article-list-large
 		padding: 0
 		width: 33.333%
 		float: left
+
+		&:nth-child(2)
+			background-color: #F1F1F1
+
 		+tablet
 			width: 50%
 
@@ -29,7 +33,8 @@ ul.article-list-large
 		&:hover
 			background-color: darken(#F7F7F7, 5%)
 
-			img
+			img,
+			.image-placeholder
 				transform: scale(1.1)
 				+tablet
 					transform: none
@@ -79,6 +84,17 @@ ul.article-list-large
 			margin-bottom: 12px
 			+mobile
 				margin-bottom: 0
+
+		.image-placeholder
+			position: relative
+			height: 180px
+			background-color: #ddd
+			margin-bottom: 35px
+			+mobile
+				height: 150px
+				margin-bottom: 25px
+			+iphone
+				margin-bottom: 15px
 
 //aside
 aside

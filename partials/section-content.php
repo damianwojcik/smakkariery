@@ -42,10 +42,14 @@
 
 				 <?php } else { ?>
 
-					<!-- =================================================
-						aside accordion
-					================================================== -->
-					<?php get_template_part("partials/aside", "accordion"); ?>
+				 	<?php if( !is_single() ) { ?> 
+
+						<!-- =================================================
+							aside accordion
+						================================================== -->
+						<?php get_template_part("partials/aside", "accordion"); ?>
+
+					<?php } ?>
 
 				<?php } ?>
 

@@ -1,4 +1,4 @@
-article
+article.news-entry
 	height: 100%
 
 	a
@@ -15,8 +15,11 @@ article
 		line-height: 1
 		height: 30px
 		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
 		+mobile
 			height: auto
+			white-space: unset
 		+iphone
 			font-size: 1.7em
 			margin-bottom: 10px
@@ -94,3 +97,10 @@ article
 		position: relative
 		+tablet
 			padding: 30px
+
+//sidebar news module
+aside .news-entry
+
+	h2
+		white-space: unset
+		height: auto

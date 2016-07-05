@@ -1,52 +1,51 @@
 <?php get_header(); ?>
 
 
-<?php
-	//template for child pages
-	if( $post->post_parent !== 0 ) { ?>
+	<!-- template for child pages -->
+	<?php if( $post->post_parent !== 0 ) { ?>
 
-	<!-- =================================================
-	section title
-	================================================== -->
-	<?php get_template_part("partials/section", "title"); ?>
+		<!-- =================================================
+			section title
+		================================================== -->
+		<?php get_template_part("partials/section", "title"); ?>
 
-	<!-- =================================================
-	section content
-	================================================== -->
-	<?php get_template_part("partials/section", "content"); ?>
+		<!-- =================================================
+			section content
+		================================================== -->
+		<?php get_template_part("partials/section", "content"); ?>
 
-<?php } else { ?>
+	<?php } else { ?>
 
-<!-- =================================================
-	section title
-================================================== -->
-<?php get_template_part("partials/section", "title"); ?>
-
-
-<!-- =================================================
-	section services
-================================================== -->
-<?php get_template_part("partials/section", "services"); ?>
+		<!-- =================================================
+			section title
+		================================================== -->
+		<?php get_template_part("partials/section", "title"); ?>
 
 
-<!-- =================================================
-	section services
-================================================== -->
-<?php get_template_part("partials/section", "gallerypanel"); ?>
+		<!-- =================================================
+			section services
+		================================================== -->
+		<?php get_template_part("partials/section", "services"); ?>
 
 
-<!-- =================================================
-	section news
-================================================== -->
-<?php get_template_part("partials/section", "news"); ?>
+		<!-- =================================================
+			section services
+		================================================== -->
+		<?php get_template_part("partials/section", "gallerypanel"); ?>
 
 
-<!-- =================================================
-	section testimonials
-================================================== -->
-<?php get_template_part("partials/section", "testimonials"); ?>
+		<!-- =================================================
+			section news
+		================================================== -->
+		<?php get_template_part("partials/section", "news"); ?>
 
-<?php } ?>
+
+		<!-- =================================================
+			section testimonials
+		================================================== -->
+		<?php get_template_part("partials/section", "testimonials"); ?>
+
+	<?php } ?>
 
 
 <?php get_footer(); ?>
