@@ -1,3 +1,66 @@
+<?php
+
+	$page_id = $post->ID;
+
+	if( $page_id == 6 ){
+		$taxonomy_id = 8;
+	} else {
+		$taxonomy_id = 9;
+	}
+
+?>
+
+<?php
+
+	$args = array(
+		'posts_per_page'   => 4,
+		'post_type'        => 'pracownicy',
+		'tax_query' => array( 
+	        array( 
+	            'taxonomy' => 'pracownicy_tax',
+	            'field' => 'id',
+	            'terms' => $taxonomy_id
+	        )
+	    )
+	);
+
+	$posts_array = get_posts( $args );
+
+?>
+
+
+<?php if (!empty($posts_array)){ ?>
+
+<?php
+
+	$current_year = current_time('Y');
+
+	//data about all workers
+	foreach ($posts_array as $post) {
+
+		$names[] = $post->post_title;
+		$photos[] = get_field("photo");
+		$roles[] = get_field("role");
+		$descriptions[] = get_field("description");
+		$experiences[] = intval( $current_year ) - intval( get_field("experience") );
+		$suffixes[] = '';
+	}
+
+	//proper Polish suffix according to years of experience
+	for($i = 0; $i <= 4; $i++ ){
+
+		if ( $experiences[$i] == 1 ) {
+			$suffixes[$i] = 'rok';
+		} elseif ( $experiences[$i] == 2 OR  $experiences[$i] == 3 OR $experiences[$i] == 4) {
+			$suffixes[$i] = 'lata';
+		} else {
+			$suffixes[$i] = 'lat';
+		}
+
+	}
+
+?>
+
 <section class="testimonials">
 
 	<div class="container">
@@ -10,18 +73,20 @@
 
 			        <div class="span7">
 
-                        <div class="text-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/przepisnamistrza/testimonial-1.jpg')">
+                        <div class="text-wrap" style="background-image: url('<?php echo $photos[0]['url']; ?>')">
 
                             <div class="color-overlay">
 
                                 <h4>
-                                    <strong>15 lat</strong>
+                                    <strong>
+                                    	<?php echo $experiences[0]; ?>
+                                    	<?php echo $suffixes[0]; ?>
+                                    </strong>
                                     z nami
                                 </h4>
 
                                 <h3>
-                                    <strong>manager ds. marki</strong>
-                                    jakość z natury
+                                    <?php echo $roles[0]; ?>
                                 </h3>
 
                             </div>
@@ -52,9 +117,9 @@
 
 							<div class="inner-wrap">
 
-	    						<h3>Grzegorz Kłosowicz</h3>
+	    						<h3><?php echo $names[0]; ?></h3>
 
-	    						<p>Swoją ścieżkę zawodową rozpoczęłam na stażu we Francji, Carrefour docenił moje zaangażowanie i zostałam wydelegowana do Tajwanu. Dano mi możliwość rozwoju w nowym obszarze nauczałam i teraz wprowadzam markę Jakość z Natury w Polsce.</p>
+	    						<p><?php echo $descriptions[0]; ?></p>
 
 							</div>
 							<!-- END inner-wrap -->
@@ -80,9 +145,9 @@
 
 						<div class="inner-wrap">
 
-							<h3>Anna Kurnatowska</h3>
+							<h3><?php echo $names[1]; ?></h3>
 
-							<p>Największą satysfakcję z pracy w Carrefour daje mi to, że każdego dnia mam możliwość rzeczywistego wykazywania się moimi umiejętnościami i wiedzą. Szeroko pojęty marketing na rzecz Galerii Handlowych Carrefour dostarcza wielu wyzwań i z pewnością wymaga kreatywności.</p>
+							<p><?php echo $descriptions[1]; ?></p>
 
 						</div>
 						<!-- END inner-wrap -->
@@ -90,18 +155,20 @@
 					</div>
 					<!-- ENR wrap -->
 
-					<div class="text-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/przepisnamistrza/testimonial-2.jpg')">
+					<div class="text-wrap" style="background-image: url('<?php echo $photos[1]['url']; ?>')">
 
 						<div class="color-overlay">
 
 							<h4>
-								<strong>3 lata</strong>
+								<strong>
+									<?php echo $experiences[1]; ?>
+									<?php echo $suffixes[1]; ?>
+								</strong>
 								z nami
 							</h4>
 
 							<h3>
-								<strong>manager ds. marketingu w dziale</strong>
-								Galerii Handlowych
+								<?php echo $roles[1]; ?>
 							</h3>
 
 						</div>
@@ -121,3 +188,134 @@
 
 </section>
 <!-- END section testimonials -->
+
+<section class="testimonials testimonials--second">
+
+	<div class="container">
+
+		<div class="row-tight">
+
+			<div class="span2">
+
+				<a href="#" class="caption-banner">
+
+					<div class="wrap">
+
+						<div class="triangle-bottom" style="border-top-color: #F8F8F8"></div>
+
+						<div class="inner-wrap">
+
+							<h3><?php echo $names[2]; ?></h3>
+
+							<p><?php echo $descriptions[2]; ?></p>
+
+						</div>
+						<!-- END inner-wrap -->
+
+					</div>
+					<!-- ENR wrap -->
+
+					<div class="text-wrap" style="background-image: url('<?php echo $photos[2]['url']; ?>')">
+
+						<div class="color-overlay">
+
+							<h4>
+								<strong>
+									<?php echo $experiences[2]; ?>
+									<?php echo $suffixes[2]; ?>
+								</strong>
+								z nami
+							</h4>
+
+							<h3>
+								<?php echo $roles[2]; ?>
+							</h3>
+
+						</div>
+
+					</div>
+					<!-- END text-wrap -->
+
+				</a>
+				<!-- END caption-banner -->
+
+			</div>
+			<!-- END span2 -->
+
+			<div class="span8">
+
+				<a href="#" class="caption-banner large">
+
+			        <div class="span7">
+
+                        <div class="text-wrap" style="background-image: url('<?php echo $photos[3]['url']; ?>">
+
+                            <div class="color-overlay">
+
+                                <h4>
+                                    <strong>
+	                                    <?php echo $experiences[3]; ?>
+										<?php echo $suffixes[3]; ?>
+                                    </strong>
+                                    z nami
+                                </h4>
+
+                                <h3>
+                                    <?php echo $roles[3]; ?>
+                                </h3>
+
+                            </div>
+
+                        </div>
+                        <!-- END text-wrap -->
+
+			        </div>
+                    <!-- END span7 -->
+
+                    <div class="span3">
+
+                        <div class="wrap" style="background-color: #e51b39">
+
+                            <h3>
+                                To jaki smak swojej kariery wybierzesz
+                                <strong>
+                                    Zależy tylko od Ciebie!
+                                </strong>
+                            </h3>
+
+                        </div>
+                        <!-- END wrap -->
+
+                        <div class="wrap">
+
+							<div class="triangle-left" style="border-right-color: #F8F8F8"></div>
+
+							<div class="inner-wrap">
+
+	    						<h3><?php echo $names[3]; ?></h3>
+
+	    						<p><?php echo $descriptions[3]; ?></p>
+
+							</div>
+							<!-- END inner-wrap -->
+
+    					</div>
+    					<!-- ENR wrap -->
+
+                    </div>
+                    <!-- END span3 -->
+
+				</a>
+
+			</div>
+			<!-- END span8 -->
+
+		</div>
+
+	</div>
+
+</section>
+<!-- END section testimonials -->
+
+<?php } // END if !empty($posts_array) ?>
+

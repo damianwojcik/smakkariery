@@ -54,5 +54,38 @@
 		);
 		register_post_type( 'pracownicy', $args );
 
+		$labels = array(
+			'name'                       => _x( 'Programy', 'Taxonomy General Name', 'text_domain' ),
+			'singular_name'              => _x( 'Program', 'Taxonomy Singular Name', 'text_domain' ),
+			'menu_name'                  => __( 'Programy', 'text_domain' ),
+			'all_items'                  => __( 'Wszystkie programy', 'text_domain' ),
+			'parent_item'                => __( '', 'text_domain' ),
+			'parent_item_colon'          => __( '', 'text_domain' ),
+			'new_item_name'              => __( 'Nazwa nowego programu', 'text_domain' ),
+			'add_new_item'               => __( 'Dodaj nowy program', 'text_domain' ),
+			'edit_item'                  => __( 'Edytuj program', 'text_domain' ),
+			'update_item'                => __( 'Aktualizuj program', 'text_domain' ),
+			'view_item'                  => __( 'Zobacz program', 'text_domain' ),
+			'separate_items_with_commas' => __( 'Oddziel programy przecinkiem', 'text_domain' ),
+			'add_or_remove_items'        => __( 'Dodaj lub usuń programy', 'text_domain' ),
+			'choose_from_most_used'      => __( 'Wybierz spośród najczęściej używanych', 'text_domain' ),
+			'popular_items'              => __( 'Popularne programy', 'text_domain' ),
+			'search_items'               => __( 'Szukaj programu', 'text_domain' ),
+			'not_found'                  => __( 'Nie znaleziono', 'text_domain' ),
+			'no_terms'                   => __( 'Brak kategorii', 'text_domain' ),
+			'items_list'                 => __( 'Lista programów', 'text_domain' ),
+			'items_list_navigation'      => __( 'Lista programów', 'text_domain' ),
+		);
+		$args = array(
+			'labels'                     => $labels,
+			'hierarchical'               => true,
+			'public'                     => true,
+			'show_ui'                    => true,
+			'show_admin_column'          => true,
+			'show_in_nav_menus'          => false,
+			'show_tagcloud'              => false,
+		);
+		register_taxonomy( 'pracownicy_tax', array( 'pracownicy' ), $args );
+
 	}
 	add_action( 'init', 'sk_custom_post_type', 0 );

@@ -12,32 +12,64 @@
 
 		<div class="span3 span-right">
 
-			<div class="quote-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/quotes-bg.jpg')">
+			<?php if ( is_page() ){ ?>
 
-				<a href="#">
+				<a href="http://www.pracuj.pl/poznaj-pracodawce/carrefour-polska-sp-z-o.o.,88/praca" class="module-offers-cta">
 
-					<div class="color-overlay">
+					<header>
+
+						<div class="triangle-bottom" style="border-top-color: #FFF"></div>
 
 						<div class="wrap">
 
-							<blockquote>
+							<h1>Dołącz do nas!</h1>
 
-								<h2>Czy wiesz, że...</h2>
+							<h2>Tu znajdziesz aktualne oferty pracy</h2>
 
-								Jedzenie dużego śniadania sprzyja gubieniu kilogramów
-
-							</blockquote>
+							<div class="btn">Zobacz więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></div>
 
 						</div>
 						<!-- END wrap -->
 
-					</div>
-					<!-- END color-overlay -->
+					</header>
 
+					<div class="img-wrap"></div>
+					<!-- END img-wrap -->
+				
 				</a>
+				<!-- END module-offers-cta -->
 
-			</div>
-			<!-- END img-wrap -->
+
+			<?php } else { ?>
+
+				<div class="quote-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/quotes-bg.jpg')">
+
+					<a href="#">
+
+						<div class="color-overlay">
+
+							<div class="wrap">
+
+								<blockquote>
+
+									<h2>Czy wiesz, że...</h2>
+
+									Jedzenie dużego śniadania sprzyja gubieniu kilogramów
+
+								</blockquote>
+
+							</div>
+							<!-- END wrap -->
+
+						</div>
+						<!-- END color-overlay -->
+
+					</a>
+
+				</div>
+				<!-- END quote-wrap -->
+
+			<?php } //end ifelse ?>
 
 		</div>
 		<!-- END span3 -->
