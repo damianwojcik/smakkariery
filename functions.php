@@ -16,3 +16,5 @@
 	include("incl/widgets.php");
 
 	include("incl/custom-functions.php");
+
+	include("incl/helpers.php");

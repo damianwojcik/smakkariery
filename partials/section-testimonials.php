@@ -1,62 +1,26 @@
 <?php
 
-	$page_id = $post->ID;
+if( $post->ID == 6 ){
+	$taxonomy_id = 8;
+} else {
+	$taxonomy_id = 9;
+}
 
-	if( $page_id == 6 ){
-		$taxonomy_id = 8;
-	} else {
-		$taxonomy_id = 9;
-	}
+$posts_array = get_random_employees_by_tax($taxonomy_id); 
 
-?>
-
-<?php
-
-	$args = array(
-		'posts_per_page'   => 4,
-		'post_type'        => 'pracownicy',
-		'tax_query' => array( 
-	        array( 
-	            'taxonomy' => 'pracownicy_tax',
-	            'field' => 'id',
-	            'terms' => $taxonomy_id
-	        )
-	    )
-	);
-
-	$posts_array = get_posts( $args );
-
-?>
-
-
-<?php if (!empty($posts_array)){ ?>
-
-<?php
+if (!empty($posts_array)){
 
 	$current_year = current_time('Y');
 
 	//data about all workers
 	foreach ($posts_array as $post) {
-
 		$names[] = $post->post_title;
 		$photos[] = get_field("photo");
 		$roles[] = get_field("role");
 		$descriptions[] = get_field("description");
-		$experiences[] = intval( $current_year ) - intval( get_field("experience") );
-		$suffixes[] = '';
-	}
-
-	//proper Polish suffix according to years of experience
-	for($i = 0; $i <= 4; $i++ ){
-
-		if ( $experiences[$i] == 1 ) {
-			$suffixes[$i] = 'rok';
-		} elseif ( $experiences[$i] == 2 OR  $experiences[$i] == 3 OR $experiences[$i] == 4) {
-			$suffixes[$i] = 'lata';
-		} else {
-			$suffixes[$i] = 'lat';
-		}
-
+		$exp_years = intval( $current_year ) - intval( get_field("experience") );
+		$experiences[] = $exp_years;
+		$suffixes[] = year_suffix($exp_years);
 	}
 
 ?>
