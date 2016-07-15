@@ -12,13 +12,19 @@
 
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-					<?php if( is_single() ){ 
-						the_date('d F Y', '<time>', '</time>'); 
-					}?>
+					<?php if( is_single() ){ ?>
 
-					<h1 class="article-heading"><?php the_title(); ?></h1>
+						<?php the_date('d F Y', '<time>', '</time>'); ?>
 
-					<img class="facebook-like" src="<?= THEME_URL; ?>/assets/img/like.jpg" alt="Like">
+						<h1 class="article-heading"><?php the_title(); ?></h1>
+
+						<img class="facebook-like" src="<?= THEME_URL; ?>/assets/img/like.jpg" alt="Like">
+
+					<?php } else { ?>
+
+						<h1 class="article-heading"><?php the_title(); ?></h1>
+
+					<?php } ?>
 
 					<?php the_content(); ?>
 

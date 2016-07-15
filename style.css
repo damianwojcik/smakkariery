@@ -4377,6 +4377,7 @@ header.site-header nav ul li.current-menu-item a {
   height: 835px;
   width: 100%;
   display: table;
+  position: relative;
 }
 
 @media (max-width: 1600px) {
@@ -4397,6 +4398,14 @@ header.site-header nav ul li.current-menu-item a {
     height: 375px;
     font-size: 80%;
   }
+}
+
+.featured .span-left .img-wrap .color-overlay {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .featured .span-left .img-wrap .text-wrap {
@@ -5707,12 +5716,19 @@ aside ul.accordion li .accordion-wrap .triangle-bottom {
   bottom: auto;
 }
 
+aside ul.accordion li .accordion-wrap:hover::after {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
 aside ul.accordion li .accordion-wrap::after {
   content: '';
   display: block;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 aside ul.accordion li .accordion-wrap a {
@@ -5724,42 +5740,35 @@ aside ul.accordion li .accordion-wrap a {
   height: 100%;
 }
 
-aside ul.accordion li .accordion-wrap a::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
-  opacity: 0;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-
-aside ul.accordion li .accordion-wrap a:hover::after {
-  opacity: 1;
-}
-
 aside ul.accordion li .accordion-wrap h3 {
   margin-bottom: 0;
   color: #FFF;
-  font-weight: bold;
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
-  right: 50px;
   font-family: "bebas_neue", serif;
   font-weight: bold;
   font-size: 30px;
 }
 
-aside ul.accordion li .accordion-wrap h3 strong {
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  display: block;
-  font-size: 48px;
-  font-weight: bold;
-  line-height: 1.1;
+aside ul.accordion li .accordion-wrap .wrap {
+  padding: 50px;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  aside ul.accordion li .accordion-wrap .wrap {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  aside ul.accordion li .accordion-wrap .wrap {
+    padding: 40px 20px;
+  }
+}
+
+aside ul.accordion li .accordion-wrap p {
+  color: #FFF;
+  font-size: 1.1em;
+  line-height: 1.6;
 }
 
 aside ul.accordion li:first-child .accordion-wrap {

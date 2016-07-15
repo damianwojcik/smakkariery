@@ -1,10 +1,11 @@
 <?php
 
     $logo = get_field('logo', $post->post_parent);
-    $title_bg = get_field('title_bg', $post->post_parent);
     $title = get_field('title', $post->post_parent);
+    $title_bg = get_field('title_bg', $post->post_parent);
     $description = get_field('description', $post->post_parent);
     $title_bgcolor = get_field('title_bgcolor', $post->post_parent);
+    $header_bg = get_field('header_bg', $post->post_parent);
 
 ?>
 
@@ -14,7 +15,11 @@
 
         <div class="span7 span-left">
 
-            <div class="img-wrap" style="background-image: url('<?php echo $title_bg['url']; ?>')">
+            <div class="img-wrap" style="background-image: url('<?php if ( is_page_template( 'templates/page-contact.php' ) ) {
+
+                echo $title_bg['url'];
+            }else { echo $header_bg['url']; } ?>
+            ')">
 
                 <div class="wrap">
 

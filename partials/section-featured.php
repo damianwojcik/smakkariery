@@ -6,17 +6,22 @@
 
 			<div class="img-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/featured-bg.jpg')">
 
-				<div class="text-wrap">
+				<div class="color-overlay">
 
-					<h3>
-						<strong>Smak</strong>
-						To kwestia gustu
-					</h3>
+					<div class="text-wrap">
 
-					<a href="<?php echo get_permalink(10); ?>" class="btn btn-transparent">Czytaj więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+						<h3>
+							<strong>Smak</strong>
+							To kwestia gustu
+						</h3>
+
+						<a href="<?php echo get_permalink(10); ?>" class="btn btn-transparent">Czytaj więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+
+					</div>
+					<!-- END text-wrap -->
 
 				</div>
-				<!-- END text-wrap -->
+				<!-- END color-overlay -->
 
 			</div>
 			<!-- END img-wrap -->

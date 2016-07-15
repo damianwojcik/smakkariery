@@ -6,7 +6,6 @@
     AND post_type = 'page' ORDER BY menu_order", 'OBJECT'); ?>
 
 	<?php if ( $child_pages ) { 
-
 		$i = 1;
 		$services_num = count($child_pages);
 
@@ -115,7 +114,7 @@
 
 						<footer>
 
-							<div class="text-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/przepisnamistrza/service-1.jpg')">
+							<div class="text-wrap" style="background-image: url('<?php echo $thumbnail[0]; ?>')">
 
 								<div class="color-overlay">
 

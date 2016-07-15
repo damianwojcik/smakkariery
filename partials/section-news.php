@@ -1,6 +1,6 @@
 <?php
 
-	include 'quotes.php';
+	include TEMPLATE_PATH.'incl/data/quotes.php';
 	$args = array( 'numberposts' => '3', 'category' => '4' );
 	$recent_posts = wp_get_recent_posts( $args );
 	$random_quote = array_rand($quotes);
