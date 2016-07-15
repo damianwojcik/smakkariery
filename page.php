@@ -1,8 +1,9 @@
 <?php get_header(); ?>
 
+<?php $children = get_children(array('post_parent' => $post->ID)); ?>
 
 	<!-- template for child pages -->
-	<?php if( $post->post_parent !== 0 ) { ?>
+	<?php if( is_page() && $post->post_parent > 0 ) { ?>
 
 		<!-- =================================================
 			section title
@@ -14,6 +15,17 @@
 		================================================== -->
 		<?php get_template_part("partials/section", "content"); ?>
 
+
+	<!-- universal page template -->
+	<?php } elseif( empty($children)) { ?>
+
+		<!-- =================================================
+			section content
+		================================================== -->
+		<?php get_template_part("partials/section", "content"); ?>
+
+
+	<!-- template for parent pages -->
 	<?php } else { ?>
 
 		<!-- =================================================
@@ -46,6 +58,5 @@
 		<?php get_template_part("partials/section", "testimonials"); ?>
 
 	<?php } ?>
-
 
 <?php get_footer(); ?>

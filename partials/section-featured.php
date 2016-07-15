@@ -13,7 +13,7 @@
 						To kwestia gustu
 					</h3>
 
-					<a href="#" class="btn btn-transparent">Czytaj więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+					<a href="<?php echo get_permalink(10); ?>" class="btn btn-transparent">Czytaj więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
 				</div>
 				<!-- END text-wrap -->
@@ -80,7 +80,7 @@
 			</div> -->
 			<!-- END module-offers -->
 
-			<a href="http://www.pracuj.pl/poznaj-pracodawce/carrefour-polska-sp-z-o.o.,88/praca" class="module-offers-cta">
+			<a href="<?php echo get_permalink(356); ?>" class="module-offers-cta">
 
 				<header>
 

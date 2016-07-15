@@ -1,10 +1,10 @@
 <?php
 
-$logo = get_field('logo', $post->post_parent);
-$title_bg = get_field('title_bg', $post->post_parent);
-$title = get_field('title', $post->post_parent);
-$description = get_field('description', $post->post_parent);
-$title_bgcolor = get_field('title_bgcolor', $post->post_parent);
+    $logo = get_field('logo', $post->post_parent);
+    $title_bg = get_field('title_bg', $post->post_parent);
+    $title = get_field('title', $post->post_parent);
+    $description = get_field('description', $post->post_parent);
+    $title_bgcolor = get_field('title_bgcolor', $post->post_parent);
 
 ?>
 

@@ -2583,7 +2583,15 @@ input[type="submit"], input[type="reset"], input[type="button"] {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.quote-wrap a:before, .quote-wrap a:after {
+.quote-wrap a .wrap {
+  display: table-cell;
+  vertical-align: middle;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.quote-wrap a .wrap:before, .quote-wrap a .wrap:after {
   content: '“';
   font-family: "Playfair Display", serif;
   font-size: 12em;
@@ -2598,28 +2606,40 @@ input[type="submit"], input[type="reset"], input[type="button"] {
   color: #FFF;
 }
 
-.quote-wrap a:after {
+@media (max-width: 1600px) {
+  .quote-wrap a .wrap:before, .quote-wrap a .wrap:after {
+    top: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-wrap a .wrap:before, .quote-wrap a .wrap:after {
+    font-size: 9em;
+    top: 10px;
+  }
+}
+
+.quote-wrap a .wrap:after {
   bottom: -20px;
   top: auto;
 }
 
 @media (max-width: 1600px) {
-  .quote-wrap a:after {
+  .quote-wrap a .wrap:after {
     bottom: -40px;
   }
 }
 
-@media (max-width: 480px) {
-  .quote-wrap a:after {
-    bottom: 0;
+@media (max-width: 1280px) {
+  .quote-wrap a .wrap:after {
+    bottom: -60px;
   }
 }
 
-.quote-wrap a .wrap {
-  display: table-cell;
-  vertical-align: middle;
-  width: 80%;
-  margin: 0 auto;
+@media (max-width: 480px) {
+  .quote-wrap a .wrap:after {
+    bottom: -30px;
+  }
 }
 
 .quote-wrap a .wrap blockquote {
@@ -2643,9 +2663,27 @@ input[type="submit"], input[type="reset"], input[type="button"] {
   }
 }
 
+@media (max-width: 1280px) {
+  .quote-wrap a .wrap blockquote {
+    top: 0;
+  }
+}
+
 @media (max-width: 1024px) {
   .quote-wrap a .wrap blockquote {
     width: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-wrap a .wrap blockquote {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-wrap a .wrap blockquote {
+    width: 90%;
   }
 }
 
@@ -4891,20 +4929,26 @@ header.site-header nav ul li.current-menu-item a {
 }
 
 .content article.wrap-article img.alignleft {
-  width: 100%;
   float: none;
-  padding: 30px;
+  max-width: 100%;
+  padding: 0;
 }
 
 @media (max-width: 768px) {
   .content article.wrap-article img.alignleft {
-    padding: 20px;
+    max-height: 350px;
   }
 }
 
 @media (max-width: 480px) {
   .content article.wrap-article img.alignleft {
-    padding: 10px;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .content article.wrap-article img.alignleft {
+    max-height: 225px;
   }
 }
 

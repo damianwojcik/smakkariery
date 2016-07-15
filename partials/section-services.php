@@ -20,6 +20,7 @@
     			$color = get_field('color', $pageChild);
     			$content = $pageChild->post_content;
 		        $trimmed_content = wp_trim_words( $content, 50 );
+		        $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($pageChild->ID), 'large' );
     		?>
 
 
@@ -39,7 +40,7 @@
 
 						<footer>
 
-							<div class="text-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/przepisnamistrza/service-1.jpg')">
+							<div class="text-wrap" style="background-image: url('<?php echo $thumbnail[0]; ?>">
 
 								<div class="color-overlay">
 
@@ -118,22 +119,22 @@
 
 								<div class="color-overlay">
 
-								<?php if( $i == 3 AND $services_num ==3){ ?>
+									<?php if( $i == 3 AND $services_num ==3){ ?>
 
-									<div class="inner-wrap">
+										<div class="inner-wrap">
 
-								<?php } ?>
+									<?php } ?>
 
 									<h2><?php echo $pageChild->post_title; ?></h2>
 
 									<p><?php echo $trimmed_content; ?></p>
 
-								<?php if( $i == 3 AND $services_num ==3){ ?>
+									<?php if( $i == 3 AND $services_num ==3){ ?>
 
-									</div>
-									<!-- END inner-wrap -->
-									
-								<?php } ?>
+										</div>
+										<!-- END inner-wrap -->
+										
+									<?php } ?>
 
 								</div>
 								<!-- END color-overlay -->

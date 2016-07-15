@@ -17,12 +17,14 @@ if (!empty($posts_array)){
 		$names[] = $post->post_title;
 		$photos[] = get_field("photo");
 		$roles[] = get_field("role");
-		$descriptions[] = get_field("description");
+		$description = get_field("description");
+		$trimmed_descriptions[] = wp_trim_words( $description, 30, '... <span style="color: #0b4da3">Czytaj więcej</span>' );
 		$exp_years = intval( $current_year ) - intval( get_field("experience") );
 		$experiences[] = $exp_years;
 		$suffixes[] = year_suffix($exp_years);
+		$photo_pos[] = get_field("photo_pos");
+		$post_ids[] = $post->ID;
 	}
-
 ?>
 
 <section class="testimonials">
@@ -33,11 +35,11 @@ if (!empty($posts_array)){
 
 			<div class="span8">
 
-				<a href="#" class="caption-banner large">
+				<a href="<?php echo get_permalink($post_ids[0]); ?>" class="caption-banner large">
 
 			        <div class="span7">
 
-                        <div class="text-wrap" style="background-image: url('<?php echo $photos[0]['url']; ?>')">
+                        <div class="text-wrap" style="background-image: url('<?php echo $photos[0]['url']; ?>'); background-position: <?php echo $photo_pos[0]; ?>">
 
                             <div class="color-overlay">
 
@@ -83,7 +85,7 @@ if (!empty($posts_array)){
 
 	    						<h3><?php echo $names[0]; ?></h3>
 
-	    						<p><?php echo $descriptions[0]; ?></p>
+	    						<p><?php echo $trimmed_descriptions[0]; ?></p>
 
 							</div>
 							<!-- END inner-wrap -->
@@ -101,7 +103,7 @@ if (!empty($posts_array)){
 
 			<div class="span2">
 
-				<a href="#" class="caption-banner">
+				<a href="<?php echo get_permalink($post_ids[1]); ?>" class="caption-banner">
 
 					<div class="wrap">
 
@@ -111,7 +113,7 @@ if (!empty($posts_array)){
 
 							<h3><?php echo $names[1]; ?></h3>
 
-							<p><?php echo $descriptions[1]; ?></p>
+							<p><?php echo $trimmed_descriptions[1]; ?></p>
 
 						</div>
 						<!-- END inner-wrap -->
@@ -119,7 +121,7 @@ if (!empty($posts_array)){
 					</div>
 					<!-- ENR wrap -->
 
-					<div class="text-wrap" style="background-image: url('<?php echo $photos[1]['url']; ?>')">
+					<div class="text-wrap" style="background-image: url('<?php echo $photos[1]['url']; ?>'); background-position: <?php echo $photo_pos[1]; ?>">
 
 						<div class="color-overlay">
 
@@ -161,7 +163,7 @@ if (!empty($posts_array)){
 
 			<div class="span2">
 
-				<a href="#" class="caption-banner">
+				<a href="<?php echo get_permalink($post_ids[2]); ?>" class="caption-banner">
 
 					<div class="wrap">
 
@@ -171,7 +173,7 @@ if (!empty($posts_array)){
 
 							<h3><?php echo $names[2]; ?></h3>
 
-							<p><?php echo $descriptions[2]; ?></p>
+							<p><?php echo $trimmed_descriptions[2]; ?></p>
 
 						</div>
 						<!-- END inner-wrap -->
@@ -179,7 +181,7 @@ if (!empty($posts_array)){
 					</div>
 					<!-- ENR wrap -->
 
-					<div class="text-wrap" style="background-image: url('<?php echo $photos[2]['url']; ?>')">
+					<div class="text-wrap" style="background-image: url('<?php echo $photos[2]['url']; ?>'); background-position: <?php echo $photo_pos[2]; ?>">
 
 						<div class="color-overlay">
 
@@ -208,11 +210,11 @@ if (!empty($posts_array)){
 
 			<div class="span8">
 
-				<a href="#" class="caption-banner large">
+				<a href="<?php echo get_permalink($post_ids[3]); ?>" class="caption-banner large">
 
 			        <div class="span7">
 
-                        <div class="text-wrap" style="background-image: url('<?php echo $photos[3]['url']; ?>">
+                        <div class="text-wrap" style="background-image: url('<?php echo $photos[3]['url']; ?>'); background-position: <?php echo $photo_pos[3]; ?>">
 
                             <div class="color-overlay">
 
@@ -258,7 +260,7 @@ if (!empty($posts_array)){
 
 	    						<h3><?php echo $names[3]; ?></h3>
 
-	    						<p><?php echo $descriptions[3]; ?></p>
+	    						<p><?php echo $trimmed_descriptions[3]; ?></p>
 
 							</div>
 							<!-- END inner-wrap -->

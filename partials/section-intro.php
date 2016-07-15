@@ -1,3 +1,7 @@
+<?php 
+    $featured_pages_ids = array(8, 6);
+?>
+
 <section class="intro">
 
 	<div class="row-tight">
@@ -31,70 +35,72 @@
 
 		<div class="span5 span-right">
 
-			<div class="row-tight">
+            <?php
 
-                <a href="#" class="caption-banner">
+                $i = 0;
 
-                    <div class="text-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/intro-banner-1.jpg')">
+                foreach ($featured_pages_ids as $featured_page) {
+                    $logo = get_field('logo', $featured_page);
+                    $title_bg = get_field('title_bg', $featured_page);
+                    $title = get_field('title', $featured_page);
+                    $description = get_field('description', $featured_page);
+                    $title_bgcolor = get_field('title_bgcolor', $featured_page);
+                    $i = $i + 1;
+            ?>
 
-                        <div class="color-overlay">
+    			<div class="row-tight">
 
-                            <h2>Strefa ucznia</h2>
+                    <a href="<?php echo get_permalink($featured_page); ?>" class="caption-banner">
 
-                            <p>Chcesz zdobyć cenne umiejętności i&nbsp;praktycznie nauczyć się zawodu, weź udział w naszym programie Przepis na mistrza.
-                            <br><br>Kierujemy go do uczniów techników oraz zasadniczych szkół zawodowych, którzy chcą rozwijać się w branży handlowej w zawodzie piekarza, cukiernika, wędliniarza lub sprzedawcy.</p>
+                        <?php if ( $i == 2 ){ ?>
 
-                        </div>
+                            <div class="wrap">
 
-                    </div>
-                    <!-- END text-wrap -->
+                                <div class="triangle-right" style="border-left-color: #FFF"></div>
 
-                    <div class="wrap">
+                                <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
 
-						<div class="triangle-left" style="border-right-color: #FFF"></div>
+                            </div>
+                            <!-- ENR wrap -->
 
-						<img src="<?= THEME_URL; ?>/assets/img/przepisnamistrza/logo.png" alt="Przepis na Mistrza">
+                        <?php } ?>
+ 
+                        <div class="text-wrap" style="background-image: url('<?php echo $title_bg['url']; ?>')">
 
-                    </div>
-                    <!-- ENR wrap -->
+                            <div class="color-overlay">
 
-                </a>
-                <!-- END caption-banner -->
+                                <h2><?php echo $title; ?></h2>
 
-			</div>
-			<!-- END row-tight -->
+                                <p>
+                                    <?php echo $description; ?>
+                                </p>
 
-			<div class="row-tight">
-
-                <a href="#" class="caption-banner">
-
-					<div class="wrap">
-
-						<div class="triangle-right" style="border-left-color: #FFF"></div>
-
-						<img src="<?= THEME_URL; ?>/assets/img/apetytnahandel/logo.png" alt="Apetyt na handel">
-
-                    </div>
-                    <!-- ENR wrap -->
-
-                    <div class="text-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/intro-banner-2.jpg')">
-
-                        <div class="color-overlay">
-
-                            <h2>Strefa studenta</h2>
-
-							<p>Jesteś studentem lub absolwentem i masz apetyt na pracę w handlu? Sprawdź, co mamy Ci do zaoferowania! Może to właśnie u nas będziesz rozwijał swoją karierę. Carrefour daje możliwość zatrudnienia na stanowiskach w różnych działach zarówno w sklepach, jak i w centrali firmy. To, jaki smak kariery wybierzesz, zależy wyłącznie od Ciebie. Sam będziesz odpowiedzialny za tworzenie swojej przyszłości zawodowej.</p>
+                            </div>
 
                         </div>
+                        <!-- END text-wrap -->
 
-                    </div>
-                    <!-- END text-wrap -->
 
-                </a>
-                <!-- END caption-banner -->
+                        <?php if ( $i == 1 ){ ?>
 
-			</div>
-			<!-- END row-tight -->
+                            <div class="wrap">
+
+        						<div class="triangle-left" style="border-right-color: #FFF"></div>
+
+        						<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+
+                            </div>
+                            <!-- ENR wrap -->
+
+                        <?php } ?>
+
+                    </a>
+                    <!-- END caption-banner -->
+
+    			</div>
+    			<!-- END row-tight -->
+
+            <?php } //end foreach ?>
 
 		</div>
 		<!-- END span4 -->

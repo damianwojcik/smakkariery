@@ -1,3 +1,5 @@
+<?php $children = get_children(array('post_parent' => $post->ID)); ?>
+
 <section class="content">
 
 	<div class="row-tight">
@@ -10,7 +12,9 @@
 
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-					<?php the_date('d F Y', '<time>', '</time>'); ?>
+					<?php if( is_single() ){ 
+						the_date('d F Y', '<time>', '</time>'); 
+					}?>
 
 					<h1 class="article-heading"><?php the_title(); ?></h1>
 
@@ -24,6 +28,15 @@
 					if( function_exists( 'ninja_forms_display_form' ) ){ ninja_forms_display_form( 5 ); }
 					}
 				?>
+
+				<?php if (get_post_type() == 'pracownicy'){
+
+					$description = get_field("description");
+
+					echo "<p>".$description."</p>";
+				
+				}?>
+
 
 			</article>
 
@@ -42,7 +55,7 @@
 
 				 <?php } else { ?>
 
-				 	<?php if( !is_single() ) { ?> 
+				 	<?php if( is_page() && !empty($children) ) { ?> 
 
 						<!-- =================================================
 							aside accordion

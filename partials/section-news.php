@@ -1,10 +1,11 @@
 <?php
 
+	include 'quotes.php';
 	$args = array( 'numberposts' => '3', 'category' => '4' );
 	$recent_posts = wp_get_recent_posts( $args );
+	$random_quote = array_rand($quotes);
 
 ?>
-
 
 <section class="news">
 
@@ -42,7 +43,7 @@
 
 			<?php } else { ?>
 
-				<div class="quote-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/quotes-bg.jpg')">
+				<div class="quote-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/quotes/<?php echo rand(1, 7); ?>.jpg')">
 
 					<a href="#">
 
@@ -54,7 +55,7 @@
 
 									<h2>Czy wiesz, że...</h2>
 
-									Jedzenie dużego śniadania sprzyja gubieniu kilogramów
+									<?php echo $quotes[$random_quote]; ?>
 
 								</blockquote>
 

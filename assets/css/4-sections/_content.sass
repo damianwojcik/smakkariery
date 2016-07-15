@@ -59,14 +59,15 @@
             line-height: 1.7
 
         img.alignleft
-            width: 100%
             float: none
-            padding: 30px
+            max-width: 100%
+            padding: 0
             +mobile
-                padding: 20px
+                max-height: 350px
             +iphone
-                padding: 10px
-
+                max-height: 300px
+            +medium-mobile
+                max-height: 225px
 //single
 .single
     .content

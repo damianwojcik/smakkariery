@@ -24,34 +24,43 @@ $section_height: 770px
             .color-overlay
                 background: rgba(0, 0 ,0, 0.3)
 
-        &:before,
-        &:after
-            content: '“'
-            font-family: $playfair-display
-            font-size: 12em
-            line-height: 1
-            font-style: italic
-            display: block
-            position: absolute
-            top: 20px
-            left: 0
-            right: 30px
-            margin: auto
-            color: #FFF
-
-        &:after
-            bottom: -20px
-            top: auto
-            +large-desktop
-                bottom: -40px
-            +iphone
-                bottom: 0
-
         .wrap
             display: table-cell
             vertical-align: middle
             width: 80%
             margin: 0 auto
+            position: relative
+
+            &:before,
+            &:after
+                content: '“'
+                font-family: $playfair-display
+                font-size: 12em
+                line-height: 1
+                font-style: italic
+                display: block
+                position: absolute
+                top: 20px
+                left: 0
+                right: 30px
+                margin: auto
+                color: #FFF
+                +large-desktop
+                    top: 5px
+                +iphone
+                    font-size: 9em
+                    top: 10px
+
+
+            &:after
+                bottom: -20px
+                top: auto
+                +large-desktop
+                    bottom: -40px
+                +desktop
+                    bottom: -60px
+                +iphone
+                    bottom: -30px
 
             blockquote
                 color: #FFF
@@ -68,8 +77,14 @@ $section_height: 770px
                 +large-desktop
                     width: 45%
                     top: -20px
+                +desktop
+                    top: 0
                 +tablet
                     width: 75%
+                +mobile
+                    font-size: 2em
+                +iphone
+                    width: 90%
 
                 h2
                     color: #FFF
