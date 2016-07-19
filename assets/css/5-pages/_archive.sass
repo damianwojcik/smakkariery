@@ -87,6 +87,58 @@ section.archive
 					font-size: 1em
 					padding: 10px 15px
 
+	.search-box
+		border: 2px solid #b6b6b6
+		margin-left: 25px
+		+tablet
+			margin-left: 0
+			margin-bottom: 20px
+
+		form
+			margin: 0
+
+		input
+			border: 0
+			margin: 0
+			float: left
+
+		input[type="text"]
+			color: #b6b6b6
+			font-family: $bebas
+			font-weight: bold
+			font-size: 2em
+			letter-spacing: 0.5px
+			padding: 17px 25px
+			height: auto
+			width: 200px
+			+tablet
+				padding: 12px 20px
+			+iphone
+				font-size: 1.35em
+
+		#searchsubmit
+			width: 70px
+			height: 70px
+			display: block
+			background-color: transparent
+			float: right
+			text-indent: -9999px
+			position: relative
+			padding: 0
+			background-image: url('assets/img/icon-search.jpg')
+			background-position: center
+			background-repeat: no-repeat
+			background-size: auto
+			+tablet
+				width: 60px
+				height: 60px
+			+iphone
+				width: 48px
+				height: 48px
+
+			&:hover
+				opacity: 0.6
+
 
 //articles-list
 ul.articles-list
@@ -154,6 +206,15 @@ ul.articles-list
 				padding-right: 0
 			+mobile
 				padding-left: 0
+
+.post-type-archive-galleries ul.articles-list li
+	height: auto
+
+	.wrap
+		height: 300px
+
+	.text-wrap
+		height: auto
 
 
 //pagination

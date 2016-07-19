@@ -97,6 +97,7 @@ jQuery(document).ready(function($){
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
             slidesPerView: 4,
+            autoplay: 3000,
             loop: true,
             paginationClickable: true,
             autoHeight: true,
@@ -126,6 +127,7 @@ jQuery(document).ready(function($){
         var swiper_banners = new Swiper('.banners .swiper-container', {
             slidesPerView: 12,
             loop: true,
+            autoplay: 3000,
             paginationClickable: true,
             autoHeight: true,
             spaceBetween: 0,

@@ -41,7 +41,7 @@
 	                                    echo '#';
 	                                }
                                 ?>
-                                " target="_blank" class="btn" style="background-color: <?php echo $button_color; ?>"><?php echo $button_txt; ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                                " target="_blank" class="btn <?php if($button_color == 'czerwony'){ echo "btn-red"; } ?>"><?php echo $button_txt; ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
 							</div>
 

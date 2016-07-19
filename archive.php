@@ -14,6 +14,21 @@
 				Archiwum newsów
 			</h1>
 
+			<nav class="search-box">
+				<form id="searchform" class="searchform" role="search" method="get" action="#">
+				
+					<div>
+
+						<label class="screen-reader-text" for="s">Szukaj:</label>
+						<input id="s" type="text" placeholder="Szukaj niusów" value="" name="s">
+						<input id="searchsubmit" type="submit" placeholder="Szukaj niusów" value="">
+
+					</div>
+
+				</form>
+			</nav>
+			<!-- END search-box -->
+
 			<nav class="years-pagination">
 				<ul>
 					<li class="active"><a href="?archive_year=2016">2016</a></li>
