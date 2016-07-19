@@ -1,6 +1,6 @@
 <?php
 	$categories = get_the_category();
-	$category_name = str_replace('"', "", $categories[0]->name);
+	if ($categories){ $category_name = str_replace('"', "", $categories[0]->name); }
 ?>
 
 

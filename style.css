@@ -6468,15 +6468,15 @@ ul.articles-list li:nth-child(4n+4) {
   }
 }
 
-.post-type-archive-galleries ul.articles-list li {
+.tax-galleries ul.articles-list li {
   height: auto;
 }
 
-.post-type-archive-galleries ul.articles-list li .wrap {
+.tax-galleries ul.articles-list li .wrap {
   height: 300px;
 }
 
-.post-type-archive-galleries ul.articles-list li .text-wrap {
+.tax-galleries ul.articles-list li .text-wrap {
   height: auto;
 }
 
