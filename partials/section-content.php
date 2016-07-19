@@ -1,3 +1,9 @@
+<?php
+	$categories = get_the_category();
+	$category_name = str_replace('"', "", $categories[0]->name);
+?>
+
+
 <?php $children = get_children(array('post_parent' => $post->ID)); ?>
 
 <section class="content">
@@ -5,6 +11,34 @@
 	<div class="row-tight">
 
 		<div class="span7">
+
+			<?php if( ( is_page() ) && !( $post->post_parent > 0 ) && (!is_page_template()) OR is_single() ) { ?>
+
+				<header class="content-title" style="background-image: url('<?= THEME_URL; ?>/assets/img/contact-bg.jpg')">
+
+					<div class="wrap">
+
+						<h1>
+
+							<?php
+
+								if( is_single() ){
+									echo $category_name;
+								} else{
+									the_title();
+								}
+
+							?>
+
+						</h1>
+						
+					</div>
+					<!-- END wrap -->
+
+				</header>
+				<!-- END content-title -->
+
+			<?php } ?>
 
 			<article class="wrap-article">
 
@@ -20,9 +54,11 @@
 
 						<img class="facebook-like" src="<?= THEME_URL; ?>/assets/img/like.jpg" alt="Like">
 
-					<?php } else { ?>
+					<?php } ?>
 
-						<h1 class="article-heading"><?php the_title(); ?></h1>
+					<?php if ( is_page() && ( $post->post_parent > 0 ) ) { ?>
+
+						<h1><?php the_title(); ?></h1>
 
 					<?php } ?>
 
@@ -31,7 +67,13 @@
 				<?php endwhile; endif; ?>
 
 				<?php } else{
-					if( function_exists( 'ninja_forms_display_form' ) ){ ninja_forms_display_form( 5 ); }
+
+						if( function_exists( 'ninja_forms_display_form' ) ){
+
+							ninja_forms_display_form( 5 );
+
+						}
+
 					}
 				?>
 
