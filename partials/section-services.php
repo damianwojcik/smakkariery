@@ -8,7 +8,6 @@
 	<?php if ( $child_pages ) { 
 		$i = 1;
 		$services_num = count($child_pages);
-
 	?>
 
     	<?php foreach ( $child_pages as $pageChild ) : setup_postdata( $pageChild ); ?>

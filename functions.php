@@ -11,6 +11,8 @@
 
 	include("incl/cpt.php");
 
+	//include("incl/cpt2.php");
+
 	include("incl/acf.php");
 
 	include("incl/widgets.php");
@@ -22,19 +24,19 @@
 
 	
 
-	function query_by_dates($query) {
+	// function query_by_dates($query) {
 		
-	    global $wp_query;
+	//     global $wp_query;
 
-	    if( isset( $_GET['archive_year'] ) ){
-	        $custom_archive_date = $_GET['archive_year'];
-	    }
+	//     if( isset( $_GET['archive_year'] ) ){
+	//         $custom_archive_date = $_GET['archive_year'];
+	//     }
 
-	    if ( $custom_archive_date ){
-	        $query->set( array('meta_key' => $custom_archive_date, 'meta_value' => date('o-m-d'), 'meta_compare' => '>=' ));
-	        return;
-	    }
+	//     if ( $custom_archive_date ){
+	//         $query->set( array('meta_key' => $custom_archive_date, 'meta_value' => date('o-m-d'), 'meta_compare' => '>=' ));
+	//         return;
+	//     }
 
-	}
+	// }
 
-	add_action( 'pre_get_posts', 'query_by_dates' );
+	// add_action( 'pre_get_posts', 'query_by_dates' );

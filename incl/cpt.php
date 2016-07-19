@@ -140,7 +140,7 @@
 			'exclude_from_search'   => true,
 			'publicly_queryable'    => true,
 			'capability_type'       => 'post',
-			'supports'				=> 'thumbnail',
+			'supports'				=>  array( 'title', 'thumbnail' )
 		);
 		register_post_type( 'galleries', $args );
 
