@@ -20,8 +20,22 @@ y.params.hashnav&&y.hashnav&&y.hashnav.init(),y.params.a11y&&y.a11y&&y.a11y.init
 
 jQuery(document).ready(function($){
 
+
+    //vars
+    var $body = $('body'),
+    $wind = $(window),
+    windW = $wind.width(),
+    windH = $wind.height();
+
+
+    $wind.on('resize', function(){
+        windW = $wind.width(),
+        windH = $wind.height();
+    });
+
+
     //init functions
-    mobile_menu_toggle();
+    mobile_menu_functions();
     search_panel_toggle();
     swiper_social_init();
     swiper_banners_init();
@@ -39,20 +53,30 @@ jQuery(document).ready(function($){
       });
 
 
-    //mobile_menu_toggle
-    function mobile_menu_toggle(){
+    //mobile menu functions
+    function mobile_menu_functions() {
 
-      $(".toggle-btn").click(function() {
+        var toggle_btn = $('.toggle-btn'),
+            menu_container = $('.mobile-menu');
 
-        $(".mobile-menu").stop().slideToggle(500);
+        $wind.on('resize', resize_nav_fix);
 
-        $("#hamburger").toggle();
+     	toggle_btn.on('click', function(){
+            menu_container.stop().slideToggle(500);
+            $("#hamburger").toggle();
+            $("#close-menu").toggle();
+        });
 
-        $("#close-menu").toggle();
-
-      });
+        function resize_nav_fix(){
+            if (windW >= 1280) {
+                menu_container.css('display', '');
+                $("#hamburger").show();
+                $("#close-menu").hide();
+            }
+        }
 
     }
+
 
     //search panel toggle
     function search_panel_toggle(){

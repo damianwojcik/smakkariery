@@ -16,10 +16,9 @@
 
 			<nav class="years-pagination">
 				<ul>
-					<li class="active"><a href="#">2016</a></li>
-					<li><a href="#">2015</a></li>
-					<li><a href="#">2014</a></li>
-					<li><a href="#">2013</a></li>
+					<li class="active"><a href="?archive_year=2016">2016</a></li>
+					<li><a href="?archive_year=2015">2015</a></li>
+					<li><a href="?archive_year=2014">2014</a></li>
 				</ul>
 			</nav>
 			<!-- END years-pagination -->
