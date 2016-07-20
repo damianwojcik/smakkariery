@@ -52,10 +52,15 @@
 		<?php get_template_part("partials/section", "news"); ?>
 
 
-		<!-- =================================================
-			section testimonials
-		================================================== -->
-		<?php get_template_part("partials/section", "testimonials"); ?>
+		<!-- if not 'Centrum Smak Kariery' page -->
+		<?php if ( !(is_page( 10 ))  ){ ?>
+
+			<!-- =================================================
+				section testimonials
+			================================================== -->
+			<?php get_template_part("partials/section", "testimonials"); ?>
+
+		<?php } //endif ?>
 
 	<?php } ?>
 

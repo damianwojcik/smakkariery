@@ -19,7 +19,6 @@
 						<h1>
 
 							<?php
-
 								if( is_single() ){
 
 									if( get_post_type() == 'gallery' ){
@@ -31,7 +30,6 @@
 								} else{
 									the_title();
 								}
-
 							?>
 
 						</h1>

@@ -2,19 +2,26 @@
 
 
 <!-- =================================================
+	archive-header
+================================================== -->
+<header class="archive-header">
+
+	<div class="container">
+
+		<h1>Wyniki wyszukiwania dla: <?php echo get_search_query(); ?></h1>
+
+	</div>
+
+</header>
+<!-- END archive-header -->
+
+
+<!-- =================================================
 	section archive
 ================================================== -->
 <section class="archive">
 
 	<div class="container">
-
-		<header>
-
-			<h1>
-				Wyniki wyszukiwania dla: <?php echo get_search_query(); ?>
-			</h1>
-
-		</header>
 
 		<?php if ( have_posts() ) : ?>
 

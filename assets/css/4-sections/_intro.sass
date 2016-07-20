@@ -11,9 +11,7 @@ $section_height: 770px
         text-align: center
         display: table
         position: relative
-        +desktop
-            height: 430px
-        +mobile
+        +tablet
             height: 475px
         +iphone
             height: 420px
@@ -56,6 +54,7 @@ $section_height: 770px
             +tablet
                 margin-bottom: 15px
                 font-size: 4em
+                transform: translateY(0px)
 
         img
             display: block
@@ -75,11 +74,11 @@ $section_height: 770px
             font-size: 1.1em
             opacity: 0
             transition: opacity 0.3s ease-in-out 0s
+            +tablet
+                opacity: 1
 
     .span-right
         height: 100%
-        +desktop
-            font-size: 110%
         +tablet
             font-size: 100%
         +mobile
@@ -104,12 +103,14 @@ $section_height: 770px
                     height: 560px
 
             .color-overlay
+                +large-desktop
+                    padding: 30px 40px
                 +tablet
-                    padding: 30px 40px 40px 40px
+                    opacity: 1
                 +mobile
-                    padding: 50px 40px 40px 40px
+                    padding: 30px
                 +iphone
-                    padding: 30px 30px 40px 30px
+                    padding: 20px
 
             img
                 position: absolute
@@ -119,10 +120,7 @@ $section_height: 770px
                 right: 0
                 margin: auto
                 max-height: 90px
-                max-width: 315px
-                +iphone
-                    max-width: 250px
-
+                max-width: 75%
 
             &:first-child
 
