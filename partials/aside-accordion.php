@@ -20,11 +20,17 @@ AND post_type = 'page' ORDER BY menu_order", 'OBJECT'); ?>
             <li>
 
                 <div class="accordion-heading" style="background-color: <?php echo $color; ?>">
+
                     <span class="accordion-icon">
-                        <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
+
+                        <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
+
                     </span>
+
                     <span class="accordion-title"><?php echo $pageChild->post_title; ?></span>
+
                 </div>
+                <!-- END accordion-heading -->
 
                 <div class="accordion-wrap" style="background-image: url('<?php echo $thumbnail[0]; ?>')">
 
@@ -43,6 +49,7 @@ AND post_type = 'page' ORDER BY menu_order", 'OBJECT'); ?>
                     </a>
 
                 </div>
+                <!-- END accordion-wrap -->
 
             </li>
 

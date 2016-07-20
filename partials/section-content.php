@@ -1,10 +1,8 @@
 <?php
 	$categories = get_the_category();
 	if ($categories){ $category_name = str_replace('"', "", $categories[0]->name); }
+	$children = get_children(array('post_parent' => $post->ID));
 ?>
-
-
-<?php $children = get_children(array('post_parent' => $post->ID)); ?>
 
 <section class="content">
 
@@ -14,7 +12,7 @@
 
 			<?php if( ( is_page() ) && !( $post->post_parent > 0 ) && (!is_page_template()) OR is_single() ) { ?>
 
-				<header class="content-title" style="background-image: url('<?= THEME_URL; ?>/assets/img/contact-bg.jpg')">
+				<header class="content-title b-lazy" data-src="<?= THEME_URL; ?>/assets/img/contact-bg.jpg">
 
 					<div class="wrap">
 
@@ -23,7 +21,13 @@
 							<?php
 
 								if( is_single() ){
-									echo $category_name;
+
+									if( get_post_type() == 'gallery' ){
+										the_title();
+									} else {
+										echo $category_name;
+									}
+
 								} else{
 									the_title();
 								}
@@ -46,16 +50,50 @@
 
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
+					<!-- single -->
 					<?php if( is_single() ){ ?>
 
-						<?php the_date('d F Y', '<time>', '</time>'); ?>
+						<!-- single gallery -->
+						<?php if( get_post_type() == 'gallery' ){
+								
+								$images = get_field('gallery'); 
 
-						<h1 class="article-heading"><?php the_title(); ?></h1>
+								if( !empty($images) ) { ?>
 
-						<img class="facebook-like" src="<?= THEME_URL; ?>/assets/img/like.jpg" alt="Like">
+									<ul class="gallery-wrap">
+
+										<?php foreach( $images as $image ): ?>
+
+											<li>
+
+												<a rel="lightbox" href="<?php echo $image['url']; ?>">
+
+													<div class="gallery-item b-lazy" data-src="<?php echo $image['url']; ?>"></div>
+
+												</a>
+
+						               		</li>
+
+										<?php endforeach; ?>
+
+									</ul>
+
+								<?php } //end if ?>
+
+						<!-- single post -->
+						<?php } else { ?>
+
+							<?php the_date('d F Y', '<time>', '</time>'); ?>
+
+							<h1 class="article-heading"><?php the_title(); ?></h1>
+
+							<img class="facebook-like" src="<?= THEME_URL; ?>/assets/img/like.jpg" alt="Like">
+
+						<?php } ?>
 
 					<?php } ?>
 
+					<!-- child page -->
 					<?php if ( is_page() && ( $post->post_parent > 0 ) ) { ?>
 
 						<h1><?php the_title(); ?></h1>
@@ -66,6 +104,7 @@
 
 				<?php endwhile; endif; ?>
 
+				<!-- contact page -->
 				<?php } else{
 
 						if( function_exists( 'ninja_forms_display_form' ) ){
@@ -77,13 +116,18 @@
 					}
 				?>
 
-				<?php if (get_post_type() == 'pracownicy'){
+				<!-- employee page -->
+				<?php if ( get_post_type() == 'pracownicy' ){
 
 					$description = get_field("description");
 
 					echo "<p>".$description."</p>";
 				
 				}?>
+
+
+				<!-- gallery post -->
+
 
 
 			</article>

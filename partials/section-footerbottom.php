@@ -49,7 +49,7 @@
 					<h2 class="offscreen">Prawa autorskie</h2>
 
 					<a href="<?= SITE_URL; ?>" class="footer-logo">
-				        <img src="<?= THEME_URL; ?>/assets/img/logo-footer.jpg" alt="Carrefour Logo">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?= THEME_URL; ?>/assets/img/logo-footer.jpg" alt="Carrefour Logo">
 				    </a>
 
 				    <p class="copy">

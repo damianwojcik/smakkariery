@@ -10,9 +10,7 @@
 
 		<header>
 
-			<h1>
-				Galerie wydarzeń
-			</h1>
+			<h1>Galerie wydarzeń</h1>
 
 		</header>
 

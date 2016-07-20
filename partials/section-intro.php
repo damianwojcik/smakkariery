@@ -6,15 +6,13 @@
 
 	<div class="row-tight">
 
-		<div class="span5 span-left" style="background-image: url('<?= THEME_URL; ?>/assets/img/intro-bg-2.jpg')">
+		<div class="span5 span-left b-lazy" data-src="<?= THEME_URL; ?>/assets/img/intro-bg-2.jpg">
 
             <div class="wrap">
 
                 <div class="inner-wrap">
 
-                    <h1>
-                        <img src="<?= THEME_URL; ?>/assets/img/smakkariery.png" alt="Smak Kariery"> Program Edukacyjny
-                    </h1>
+                    <h1><img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?= THEME_URL; ?>/assets/img/smakkariery.png" alt="Smak Kariery"> Program Edukacyjny</h1>
 
                     <span>
                         Smak to kwestia gustu. Każdy powinien robić to,<br>
@@ -65,7 +63,7 @@
 
                         <?php } ?>
  
-                        <div class="text-wrap" style="background-image: url('<?php echo $title_bg['url']; ?>')">
+                        <div class="text-wrap b-lazy" data-src="<?php echo $title_bg['url']; ?>">
 
                             <div class="color-overlay">
 

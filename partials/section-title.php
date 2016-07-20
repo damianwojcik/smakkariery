@@ -15,11 +15,7 @@
 
         <div class="span7 span-left">
 
-            <div class="img-wrap" style="background-image: url('<?php if ( is_page_template( 'templates/page-contact.php' ) ) {
-
-                echo $title_bg['url'];
-            }else { echo $header_bg['url']; } ?>
-            ')">
+            <div class="img-wrap b-lazy" data-src="<?php if ( is_page_template( 'templates/page-contact.php' ) ) { echo $title_bg['url']; } else { echo $header_bg['url']; } ?>">
 
                 <div class="wrap">
 
@@ -30,7 +26,7 @@
                 <?php } else { ?>
 
                     <h1>
-                        <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+                        <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
                         <span class="sr-only"><?php the_title(); ?></span>
                     </h1>
                     

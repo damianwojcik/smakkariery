@@ -10,9 +10,7 @@
 
 		<header>
 
-			<h1>
-				Galerie wydarzeń
-			</h1>
+			<h1>Galerie wydarzeń programu: <?php echo get_queried_object()->name; ?></h1>
 
 		</header>
 
@@ -28,7 +26,6 @@
 					$thumbnail = wp_get_attachment_image_src ( get_post_thumbnail_id(), 'large');
 					$date = get_the_date();
 					$title = get_the_title();
-
 				?>
 
 				<li>

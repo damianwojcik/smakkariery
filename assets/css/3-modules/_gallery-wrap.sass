@@ -1,0 +1,29 @@
+.gallery-wrap
+
+	display: table
+	width: 100%
+
+	li
+		display: inline-block
+		width: 25%
+		float: left
+		padding: 0 10px
+		margin-bottom: 20px
+		+large-desktop
+			width: 33.333%
+		+mobile
+			width: 50%
+		+medium-handset
+			width: 100%
+			padding: 0
+
+	a
+		display: block
+
+	.gallery-item
+		+background_img
+		height: 250px
+		+transition(all 0.4s ease-in-out)
+
+		&:hover
+			transform: scale(1.1)

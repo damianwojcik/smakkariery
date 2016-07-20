@@ -33,13 +33,11 @@
 
 					<?php if( !empty($thumbnail) ){ ?>
 
-						<img src="<?php echo $thumbnail[0]; ?>" alt="<?php echo $title; ?>">
+						<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $thumbnail[0]; ?>" alt="<?php echo $title; ?>">
 
 					<?php } else { ?>
 
-						<div class="image-placeholder">
-							<i class="fa fa-picture-o" aria-hidden="true"></i>
-						</div>
+						<div class="image-placeholder"><i class="fa fa-picture-o" aria-hidden="true"></i></div>
 
 					<?php } //end if ?>
 

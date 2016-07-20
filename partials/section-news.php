@@ -34,7 +34,7 @@
 
 					</header>
 
-					<div class="img-wrap"></div>
+					<div class="img-wrap b-lazy" data-src="<?= THEME_URL; ?>/assets/img/featured-bg-2.jpg"></div>
 					<!-- END img-wrap -->
 				
 				</a>
@@ -43,7 +43,7 @@
 
 			<?php } else { ?>
 
-				<div class="quote-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/quotes/<?php echo rand(1, 7); ?>.jpg')">
+				<div class="quote-wrap b-lazy" data-src="<?= THEME_URL; ?>/assets/img/quotes/<?php echo rand(1, 7); ?>.jpg">
 
 					<a href="#">
 
@@ -105,13 +105,11 @@
 
 								<?php if( !empty($thumbnail) ){ ?>
 
-								<img src="<?php echo $thumbnail[0]; ?>" alt="<?php echo $title; ?>">
+									<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $thumbnail[0]; ?>" alt="<?php echo $title; ?>">
 
 								<?php } else { ?>
 
-									<div class="image-placeholder">
-							            <i class="fa fa-picture-o" aria-hidden="true"></i>
-							        </div>
+									<div class="image-placeholder"><i class="fa fa-picture-o" aria-hidden="true"></i></div>
 
 								<?php } //end if?>
 

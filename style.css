@@ -1750,6 +1750,19 @@ div.aligncenter {
   }
 }
 
+.b-lazy {
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+  max-width: 100%;
+  opacity: 0;
+}
+
+.b-lazy.b-loaded {
+  opacity: 1;
+}
+
 section {
   display: table;
   width: 100%;
@@ -2856,7 +2869,6 @@ input[type="submit"], input[type="reset"], input[type="button"] {
 }
 
 .module-offers-cta .img-wrap {
-  background-image: url("assets/img/featured-bg-2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3487,6 +3499,56 @@ article.wrap-article {
     padding: 20px;
     font-size: 80%;
   }
+}
+
+.gallery-wrap {
+  display: table;
+  width: 100%;
+}
+
+.gallery-wrap li {
+  display: inline-block;
+  width: 25%;
+  float: left;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1600px) {
+  .gallery-wrap li {
+    width: 33.333%;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-wrap li {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-wrap li {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.gallery-wrap a {
+  display: block;
+}
+
+.gallery-wrap .gallery-item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 250px;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.gallery-wrap .gallery-item:hover {
+  transform: scale(1.1);
 }
 
 header.site-header {
@@ -5878,7 +5940,6 @@ aside ul.article-list-large li:nth-child(2) {
 section.gallerypanel .wrap {
   display: table;
   width: 100%;
-  background-image: url("assets/img/section-gallery.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

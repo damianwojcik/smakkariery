@@ -1,30 +1,31 @@
 <?php
 
-if( $post->ID == 6 ){
-	$taxonomy_id = 8;
-} else {
-	$taxonomy_id = 9;
-}
-
-$posts_array = get_random_employees_by_tax($taxonomy_id); 
-
-if (!empty($posts_array)){
-
-	$current_year = current_time('Y');
-
-	//data about all workers
-	foreach ($posts_array as $post) {
-		$names[] = $post->post_title;
-		$photos[] = get_field("photo");
-		$roles[] = get_field("role");
-		$description = get_field("description");
-		$trimmed_descriptions[] = wp_trim_words( $description, 30, '... <span style="color: #0b4da3">Czytaj więcej</span>' );
-		$exp_years = intval( $current_year ) - intval( get_field("experience") );
-		$experiences[] = $exp_years;
-		$suffixes[] = year_suffix($exp_years);
-		$photo_pos[] = get_field("photo_pos");
-		$post_ids[] = $post->ID;
+	if( $post->ID == 6 ){
+		$taxonomy_id = 8;
+	} else {
+		$taxonomy_id = 9;
 	}
+
+	$posts_array = get_random_employees_by_tax($taxonomy_id); 
+
+	if (!empty($posts_array)){
+
+		$current_year = current_time('Y');
+
+		//data about all workers
+		foreach ($posts_array as $post) {
+			$names[] = $post->post_title;
+			$photos[] = get_field("photo");
+			$roles[] = get_field("role");
+			$description = get_field("description");
+			$trimmed_descriptions[] = wp_trim_words( $description, 30, '... <span style="color: #0b4da3">Czytaj więcej</span>' );
+			$exp_years = intval( $current_year ) - intval( get_field("experience") );
+			$experiences[] = $exp_years;
+			$suffixes[] = year_suffix($exp_years);
+			$photo_pos[] = get_field("photo_pos");
+			$post_ids[] = $post->ID;
+		}
+
 ?>
 
 <section class="testimonials">
@@ -39,7 +40,7 @@ if (!empty($posts_array)){
 
 			        <div class="span7">
 
-                        <div class="text-wrap" style="background-image: url('<?php echo $photos[0]['url']; ?>'); background-position: <?php echo $photo_pos[0]; ?>">
+                        <div class="text-wrap b-lazy" data-src="<?php echo $photos[0]['url']; ?>" style="background-position: <?php echo $photo_pos[0]; ?>">
 
                             <div class="color-overlay">
 
@@ -121,7 +122,7 @@ if (!empty($posts_array)){
 					</div>
 					<!-- ENR wrap -->
 
-					<div class="text-wrap" style="background-image: url('<?php echo $photos[1]['url']; ?>'); background-position: <?php echo $photo_pos[1]; ?>">
+					<div class="text-wrap b-lazy" data-src="<?php echo $photos[1]['url']; ?>" style="background-position: <?php echo $photo_pos[1]; ?>">
 
 						<div class="color-overlay">
 
@@ -181,7 +182,7 @@ if (!empty($posts_array)){
 					</div>
 					<!-- ENR wrap -->
 
-					<div class="text-wrap" style="background-image: url('<?php echo $photos[2]['url']; ?>'); background-position: <?php echo $photo_pos[2]; ?>">
+					<div class="text-wrap b-lazy" data-src="<?php echo $photos[2]['url']; ?>" style="background-position: <?php echo $photo_pos[2]; ?>">
 
 						<div class="color-overlay">
 
@@ -214,7 +215,7 @@ if (!empty($posts_array)){
 
 			        <div class="span7">
 
-                        <div class="text-wrap" style="background-image: url('<?php echo $photos[3]['url']; ?>'); background-position: <?php echo $photo_pos[3]; ?>">
+                        <div class="text-wrap b-lazy" data-src="<?php echo $photos[3]['url']; ?>" style="background-position: <?php echo $photo_pos[3]; ?>">
 
                             <div class="color-overlay">
 

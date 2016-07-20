@@ -4,16 +4,13 @@
 
 		<div class="span5 span-left">
 
-			<div class="img-wrap" style="background-image: url('<?= THEME_URL; ?>/assets/img/featured-bg.jpg')">
+			<div class="img-wrap b-lazy" data-src="<?= THEME_URL; ?>/assets/img/featured-bg.jpg">
 
 				<div class="color-overlay">
 
 					<div class="text-wrap">
 
-						<h3>
-							<strong>Smak</strong>
-							To kwestia gustu
-						</h3>
+						<h3><strong>Smak</strong>To kwestia gustu</h3>
 
 						<a href="<?php echo get_permalink(10); ?>" class="btn btn-transparent">Czytaj więcej <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
@@ -104,7 +101,7 @@
 
 				</header>
 
-				<div class="img-wrap"></div>
+				<div class="img-wrap b-lazy" data-src="<?= THEME_URL; ?>/assets/img/featured-bg-2.jpg"></div>
 				<!-- END img-wrap -->
 				
 			</a>

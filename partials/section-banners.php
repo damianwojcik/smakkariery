@@ -1,6 +1,7 @@
 <section class="banners">
 
     <div class="swiper-container">
+
         <div class="swiper-wrapper">
 
             <?php if( have_rows('banners_group', 'option') ): ?>
@@ -36,7 +37,7 @@
                                     ?>
                                 " target="_blank">
 
-                                    <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
+                                    <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>">
 
                                 </a>
 
@@ -51,6 +52,7 @@
             <?php endif; ?>
 
         </div>
+
     </div>
 
 </section>

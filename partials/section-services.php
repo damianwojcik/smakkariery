@@ -38,7 +38,7 @@
 
 						<footer>
 
-							<div class="text-wrap" style="background-image: url('<?php echo $thumbnail[0]; ?>">
+							<div class="text-wrap b-lazy" data-src="<?php echo $thumbnail[0]; ?>">
 
 								<div class="color-overlay">
 
@@ -61,7 +61,7 @@
 
 								<div class="heading">
 
-									<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
+									<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
 
 									<h2><?php echo $pageChild->post_title; ?></h2>
 
@@ -93,7 +93,7 @@
 
 								<div class="heading">
 
-									<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
+									<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
 
 									<h2><?php echo $pageChild->post_title; ?></h2>
 

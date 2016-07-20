@@ -9,14 +9,12 @@
 					<?php while ( have_rows('social_box', 'option') ) : the_row(); ?>
 
 						<?php
-
 							$logo = get_sub_field('logo');
 							$box_bgcolor = get_sub_field('box_bgcolor');
 							$details = get_sub_field('details');
 							$button_color = get_sub_field('button_color');
 							$button_txt = get_sub_field('button_txt');
 							$link = get_sub_field('link');
-
 						?>
 
 						<!-- BEGIN SLIDE -->
@@ -24,7 +22,7 @@
 
 							<div class="slide-wrap" style="background-color: <?php echo $box_bgcolor; ?>">
 
-								<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+								<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
 
 								<div class="inner-wrap">
 
