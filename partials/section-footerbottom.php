@@ -53,7 +53,7 @@
 				    </a>
 
 				    <p class="copy">
-				        Made with passion by <a href="http://time4.pl/" target="_blank" title="Time4 Custom Publishing">Time4.pl</a> &copy; <?= current_time('Y'); ?>
+				        <a href="http://time4.pl/" target="_blank" title="Time4 Custom Publishing">Made with passion by Time4.pl &copy; <?= current_time('Y'); ?></a>
 				    </p>
 
 			    </div>

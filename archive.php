@@ -2,43 +2,50 @@
 
 
 <!-- =================================================
+	archive-header
+================================================== -->
+<header class="archive-header">
+
+	<div class="container">
+
+	<h1>Archiwum newsów</h1>
+
+	<nav class="search-box">
+		<form id="searchform" class="searchform" role="search" method="get" action="#">
+		
+			<div>
+
+				<label class="screen-reader-text" for="s">Szukaj:</label>
+				<input id="s" type="text" placeholder="Szukaj niusów" value="" name="s">
+				<input id="searchsubmit" type="submit" placeholder="Szukaj niusów" value="">
+
+			</div>
+
+		</form>
+	</nav>
+	<!-- END search-box -->
+
+	<nav class="years-pagination">
+		<ul>
+			<li class="active"><a href="?archive_year=2016">2016</a></li>
+			<li><a href="?archive_year=2015">2015</a></li>
+			<li><a href="?archive_year=2014">2014</a></li>
+		</ul>
+	</nav>
+	<!-- END years-pagination -->
+
+	</div>
+
+</header>
+<!-- END archive-header -->
+
+
+<!-- =================================================
 	section archive
 ================================================== -->
 <section class="archive">
 
 	<div class="container">
-
-		<header>
-
-			<h1>
-				Archiwum newsów
-			</h1>
-
-			<nav class="search-box">
-				<form id="searchform" class="searchform" role="search" method="get" action="#">
-				
-					<div>
-
-						<label class="screen-reader-text" for="s">Szukaj:</label>
-						<input id="s" type="text" placeholder="Szukaj niusów" value="" name="s">
-						<input id="searchsubmit" type="submit" placeholder="Szukaj niusów" value="">
-
-					</div>
-
-				</form>
-			</nav>
-			<!-- END search-box -->
-
-			<nav class="years-pagination">
-				<ul>
-					<li class="active"><a href="?archive_year=2016">2016</a></li>
-					<li><a href="?archive_year=2015">2015</a></li>
-					<li><a href="?archive_year=2014">2014</a></li>
-				</ul>
-			</nav>
-			<!-- END years-pagination -->
-
-		</header>
 
 		<?php if ( have_posts() ) : ?>
 

@@ -102,6 +102,16 @@ aside
 		width: 100%
 		float: none
 		border-bottom: 1px solid rgba(0,0,0,0.1)
+		+desktop
+			width: 33.333%
+			border-bottom: 0
+			float: left
+		+tablet
+			width: 50%
+		+medium-handset
+			width: 100%
+			border-bottom: 1px solid rgba(0,0,0,0.1)
+			float: none
 
 		&:last-child
 			border-bottom: 0
@@ -114,15 +124,33 @@ aside
 
 		article img
 			+desktop
-				height: 350px
+				height: 250px
 				transform: none
 			+tablet
 				height: 250px
-			+iphone
+			+desktop
 				height: 150px
+			+medium-handset
+				height: 200px
 
 		article p
 			+desktop
+				height: 300px
+			+tablet
+				height: 187px
+				margin-bottom: 30px
+			+medium-handset
 				height: auto
+				margin-bottom: 20px
+
+		article a
+			+desktop
+				padding: 40px
+			+mobile
+				padding: 35px
 			+iphone
-				height: 94px
+				padding: 20px
+
+		.read-more
+			+iphone
+				margin-bottom: 10px

@@ -8,14 +8,17 @@ section.archive
 		+iphone
 			padding: 30px 20px 30px 20px
 
-	header
-		display: table
-		width: 100%
-		margin-bottom: 60px
-		+tablet
-			margin-bottom: 40px
-		+iphone
-			margin-bottom: 30px
+.archive-header
+	display: table
+	width: 100%
+	padding: 30px 80px
+	background-color: #EBEBEB
+	+large-desktop
+		padding: 30px 40px
+	+tablet
+		padding: 30px
+	+iphone
+		padding: 20px
 
 	h1
 		font-family: $bebas
@@ -29,7 +32,6 @@ section.archive
 		margin-top: 8px
 		+tablet
 			font-size: 2.8em
-			margin-bottom: 20px
 			margin-top: 0
 		+iphone
 			font-size: 2.4em
@@ -55,6 +57,8 @@ section.archive
 			float: left
 			border: 2px solid #b6b6b6
 			margin-left: 5px
+			background-color: #FFF
+			+transition(all 0.4s ease-in-out)
 
 			&:first-child
 				margin-left: 0
@@ -64,13 +68,16 @@ section.archive
 				a
 					color: darken(#b6b6b6, 20%)
 
-			&.active,
-			&.active:hover
+			&.active
 				border: 2px solid #b6b6b6
 				background-color: #b6b6b6
 				cursor: default
 				a
 					color: #FFF
+
+			&.active:hover
+				background-color: darken(#b6b6b6, 20%)
+				border: 2px solid darken(#b6b6b6, 20%)
 
 			a
 				display: block
@@ -90,6 +97,7 @@ section.archive
 	.search-box
 		border: 2px solid #b6b6b6
 		margin-left: 25px
+		background-color: #FFF
 		+tablet
 			margin-left: 0
 			margin-bottom: 20px
@@ -120,7 +128,7 @@ section.archive
 			width: 70px
 			height: 70px
 			display: block
-			background-color: transparent
+			background-color: #FFF
 			float: right
 			text-indent: -9999px
 			position: relative
@@ -137,7 +145,7 @@ section.archive
 				height: 48px
 
 			&:hover
-				opacity: 0.6
+				opacity: 0.8
 
 
 //articles-list

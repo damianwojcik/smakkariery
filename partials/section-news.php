@@ -45,27 +45,23 @@
 
 				<div class="quote-wrap b-lazy" data-src="<?= THEME_URL; ?>/assets/img/quotes/<?php echo rand(1, 7); ?>.jpg">
 
-					<a href="#">
+					<div class="color-overlay">
 
-						<div class="color-overlay">
+						<div class="wrap">
 
-							<div class="wrap">
+							<blockquote>
 
-								<blockquote>
+								<h2>Czy wiesz, że...</h2>
 
-									<h2>Czy wiesz, że...</h2>
+								<?php echo $quotes[$random_quote]; ?>
 
-									<?php echo $quotes[$random_quote]; ?>
-
-								</blockquote>
-
-							</div>
-							<!-- END wrap -->
+							</blockquote>
 
 						</div>
-						<!-- END color-overlay -->
+						<!-- END wrap -->
 
-					</a>
+					</div>
+					<!-- END color-overlay -->
 
 				</div>
 				<!-- END quote-wrap -->

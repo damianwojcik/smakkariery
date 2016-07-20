@@ -2,18 +2,26 @@
 
 
 <!-- =================================================
+	archive-header
+================================================== -->
+<header class="archive-header">
+
+	<div class="container">
+
+		<h1>Galerie wydarzeń programu: <?php echo get_queried_object()->name; ?></h1>
+
+	</div>
+
+</header>
+<!-- END archive-header -->
+
+
+<!-- =================================================
 	section archive
 ================================================== -->
 <section class="archive">
 
 	<div class="container">
-
-		<header>
-
-			<h1>Galerie wydarzeń programu: <?php echo get_queried_object()->name; ?></h1>
-
-		</header>
-
 
 		<?php if ( have_posts() ) : ?>
 

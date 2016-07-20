@@ -22,7 +22,11 @@
 
 							<div class="slide-wrap" style="background-color: <?php echo $box_bgcolor; ?>">
 
-								<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+								<a href="<?php if($link){ echo $link; }else { echo '#'; } ?>" target="_blank">
+
+									<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+
+								</a>
 
 								<div class="inner-wrap">
 
@@ -31,15 +35,11 @@
 								</div>
 								<!-- END inner-wrap -->
 
-								<a href="
-								<?php
-                                    if($link){
-	                                    echo $link;
-	                                }else {
-	                                    echo '#';
-	                                }
-                                ?>
-                                " target="_blank" class="btn <?php if($button_color == 'czerwony'){ echo "btn-red"; } ?>"><?php echo $button_txt; ?><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								<a href="<?php if($link){ echo $link; }else { echo '#'; } ?>" target="_blank" class="btn <?php if($button_color == 'czerwony'){ echo "btn-red"; } ?>">
+
+									<?php echo $button_txt; ?><i class="fa fa-chevron-right" aria-hidden="true"></i>
+									
+								</a>
 
 							</div>
 
