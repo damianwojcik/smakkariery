@@ -85,7 +85,27 @@
 
 							<h1 class="article-heading"><?php the_title(); ?></h1>
 
-							<img class="facebook-like" src="<?= THEME_URL; ?>/assets/img/like.jpg" alt="Like">
+							<ul class="social-sharing">
+
+								<li>
+									<a href="https://www.facebook.com/sharer.php?u=<?= SITE_URL; ?>" target="_blank">
+										<img src="<?= THEME_URL; ?>/assets/img/icons/share-facebook.png" alt="Udostępnij na Facebooku" >
+									</a>
+								</li>
+
+								<li>
+									<a href="https://plus.google.com/share?url=<?= SITE_URL; ?>" target="_blank">
+										<img src="<?= THEME_URL; ?>/assets/img/icons/share-gplus.png" alt="Udostępnij na Google+" >
+									</a>
+								</li>
+
+								<li>
+									<a href="https://twitter.com/intent/tweet?url=<?= SITE_URL; ?>" target="_blank">
+										<img src="<?= THEME_URL; ?>/assets/img/icons/share-twitter.png" alt="Udostępnij na Twitterze" >
+									</a>
+								</li>
+
+							</ul>
 
 						<?php } ?>
 

@@ -1,11 +1,16 @@
 <?php
 
+    $page_children= get_pages("child_of=".$post->ID."&sort_column=menu_order");
+    $first_children_permalink = get_permalink($page_children[0]->ID);
+
     $logo = get_field('logo', $post->post_parent);
     $title = get_field('title', $post->post_parent);
     $title_bg = get_field('title_bg', $post->post_parent);
-    $description = get_field('description', $post->post_parent);
+    $description_full = get_field('description_full', $post->post_parent);
+    $description_full_trimmed = wp_trim_words( $description_full, 45 );
     $title_bgcolor = get_field('title_bgcolor', $post->post_parent);
     $header_bg = get_field('header_bg', $post->post_parent);
+
 
 ?>
 
@@ -70,7 +75,8 @@
                 <?php } else { ?>
 
                     <p>
-                        <?php echo $description; ?>
+                        <?php echo $description_full_trimmed; ?>
+                        <a href="<?php echo $first_children_permalink; ?>">Czytaj więcej</a>
                     </p>
 
                 <?php } ?>

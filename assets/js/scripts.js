@@ -50,6 +50,38 @@ jQuery(document).ready(function($){
     swiper_social_init();
     swiper_banners_init();
     lazy_load();
+    smart_sidebar();
+
+
+   	//smart_sidebar - hides aside news depending on content height
+    function smart_sidebar(){
+
+    	if( $('.content aside') ){ 
+
+		var 
+			sidebar_height = $('.content aside').height(),
+			content_height = $('.content .span7').height(),
+			news_height = $('.content aside .news-entry').height(),
+
+
+			height_diff =  sidebar_height - content_height;
+
+
+			if( height_diff > news_height ){
+				$('.content aside ul.article-list-large li:last-child').hide();
+			}
+
+			if( height_diff > (news_height * 2) ){
+				$('.content aside ul.article-list-large li:nth-last-child(2)').hide();
+			}
+
+			if( height_diff > ((news_height * 3)-100) ){
+				$('.content aside ul.article-list-large').hide();
+			}
+
+    	}
+
+    }
 
 
     //accordion
